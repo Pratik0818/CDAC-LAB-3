@@ -1,0 +1,249 @@
+.questions{
+    margin-left: 2rem;
+    margin-right: 2rem;
+   
+}
+
+.DisplayExplanationMssg{
+    font-size: 12px;
+    color: red;
+}
+
+.lifeline-container{
+        display: flex;
+        justify-content: space-between;
+        font-size: larger;
+        padding: 0px;
+        
+}
+
+.lifeline-icon{
+    color: #28a745;
+    cursor: pointer;
+}
+
+.lifeline-icon:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.lifeline{
+    position: relative;
+    top: -4px;
+}
+
+.main-quiz-component-img{
+    display: flex;
+}
+
+.questionTitle{
+    /*font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    width:100%;*/
+    width: 100%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+    top: 50%; 
+  
+}
+
+.question-container{
+    /*text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1rem auto;
+    display: inline-flex;
+    width: 100%;*/
+    padding: 0px;
+}
+
+.question-container-img{
+    /*text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1rem auto;
+    display: inline-flex;
+    width: 100%;*/
+    width: 50%;
+    padding: 0px;
+}
+
+.quizTitle{
+    text-align: center;
+    margin: auto;
+}
+
+.main-option-container-img{
+    width:50%;
+}
+
+.options-container{
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.option{
+    background-color: #77c9d4;
+    /*border-radius: 15%;*/
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    justify-content: center;    
+    width: 45%;
+}
+
+.option-img{
+    background-color: #77c9d4;
+    /*border-radius: 15%;*/
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    justify-content: center;    
+    width: 100%;
+}
+
+.options-container-hor{
+    display: inline-block;
+    width: 50%;
+    text-align: center;  
+}
+
+.options-container-img{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.img-container{
+    /*text-align: left;
+    width: 20%;*/
+
+    width: 80%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.option-hor {
+    background-color: #77c9d4;
+    /*border-radius: 15%;*/
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    justify-content: center;    
+    width: 90%;
+}
+
+.option-with-img {
+    /*background-color: rgba(75, 75, 177, 0.808);*/
+    /*border-radius: 15%;*/
+    display: flex;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+}
+
+.option .act {
+    background-color: blue;
+    /*border-radius: 15%;*/
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    width: 90%;
+}
+
+.option:hover{
+    background-color: blue;
+}
+
+.optionText{
+    padding: 0 0;
+    margin: auto 1rem;
+    color: black;
+}
+
+.button-container{
+    display: flex;
+    /*justify-content: flex-start;*/
+    justify-content: center;
+    /*text-align: center;*/
+    /* margin: 0 auto 1.0rem auto; */
+    padding: 1rem;
+    /* width: 80%; */
+}
+
+.button-container button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-content: center;
+    width: 100px;
+    border-radius: 15px;
+    margin-right: 2rem;
+    padding: 1rem 0.5rem;
+}
+
+.button-container button:first-child {
+    background-color: #007bff;
+    box-shadow: gray;
+    transition: 0.2s linear all;
+}
+
+.button-container button:first-child:hover {
+    background-color: rgb(49, 49, 202);
+}
+
+.button-container button:nth-child(2) {
+    background-color: #28a745;
+    box-shadow: gray;
+    transition: 0.2s linear all;
+}
+
+.button-container button:nth-child(2):hover {
+    background-color: rgb(30, 71, 30);
+}
+
+.button-container button:last-child {
+    background-color: #007bff;
+    box-shadow: gray;
+    transition: 0.2s linear all;
+}
+
+.button-container button:last-child:hover {
+    background-color: rgb(49, 49, 202);
+}

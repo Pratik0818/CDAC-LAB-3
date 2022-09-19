@@ -1,0 +1,93 @@
+[
+    {
+        "question": "What fraction of the shape is yellow?",
+        "questionHasImg" : true,
+        "questionImg" : "grid.png",
+        "optionA": "2/9",
+        "optionB": "4/18",
+        "optionC": "3/9",
+        "optionD": "8/9",
+        "isOptionsHaveImages": [false, false, false, false],
+        "optionAImg": "",
+        "optionBImg": "",
+        "optionCImg": "",
+        "optionDImg": "",
+        "answer": "C. 3/9",
+        "explanation": "Count the number of equal parts. <br/>There are 9 equal parts. <br/>Count the number of yellow parts. <br/>There are 3 yellow parts. <br/>3 out of 9 equal parts are yellow.",
+        "explanationHasImg" : false,
+        "explanationImg" : "",
+        "noOfAttempts": 2,
+        "questionType": "selectOptions",
+        "maxMarks" : 1
+    },
+
+    {
+        "question": "Substract and simplify your answer (5/7-2/3)?",
+         "questionHasImg" : false,
+         "questionImg" : "",
+         "optionA": "6/7",
+         "optionB": "1/21",
+         "optionC": "4/7",
+         "optionD": "4/14",
+         "isOptionsHaveImages": [false, false, false, false],
+         "optionAImg": "",
+         "optionBImg": "",
+         "optionCImg": "",
+         "optionDImg": "",
+         "answer": "B. 1/21",
+         "explanation": "Here, the denominator values are the different, and find LCM. <br/>Now, subtract the numerator values<br/> (5/7) - (2/3) = (5*3)/21 - (2*7)/21 = (15-14)/21",
+         "explanationHasImg" : false,
+         "explanationImg" : "",
+         "noOfAttempts": 2,
+         "questionType": "selectOptions",
+        "maxMarks" : 1
+    },
+
+    {
+        "question": "Write 10/25 in lowest terms?",
+        "questionHasImg" : false,
+        "questionImg" : "",
+        "optionA": "2/5",
+        "optionB": "2/8",
+        "optionC": "4/3",
+        "optionD": "3/9",
+        "isOptionsHaveImages": [false, false, false, false],
+        "optionAImg": "",
+        "optionBImg": "",
+        "optionCImg": "",
+        "optionDImg": "",
+        "answer": "A. 2/5",
+        "explanation": "Find the largest number that divides both the numerator and the denominator. <br/>The largest number that divides both 10 and 25 is 5. <br/>Divide the numerator and denominator by 5. <br/>10/ 5 = 2 <br/> 25 / 5 = 5",
+        "explanationHasImg" : false,
+        "explanationImg" : "",
+        "noOfAttempts": 2,
+        "questionType": "selectOptions",
+        "maxMarks" : 1
+    },
+
+    {
+        "question": "Nathan went to a party where there were 8 guests. 7 of the guests got a whistle as a party favour. What fraction of the guests got a whistle?",
+        "questionHasImg" : false,
+        "questionImg" : "",
+        "optionA": "1/9",
+        "optionB": "2/9",
+        "optionC": "3/3",
+        "optionD": "7/8",
+        "isOptionsHaveImages": [false, false, false, false],
+        "optionAImg": "",
+        "optionBImg": "",
+        "optionCImg": "",
+        "optionDImg": "",
+        "answer": "D. 7/8",
+        "explanation": "7 out of 8 guests got a whistle. <br/>7/8 got a whistle",
+        "explanationHasImg" : false,
+        "explanationImg" : "",
+        "noOfAttempts": 2,
+        "questionType": "selectOptions",
+        "maxMarks" : 1
+    }
+
+   
+ 
+    
+]
