@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { DoubleSide } from "three";
 import { toast } from "react-toastify";
 
-const Cubes = (props) => {
+const CuboidsA = (props) => {
   let a = localStorage.getItem("A");
   //console.log(a);
 
@@ -16,6 +16,7 @@ const Cubes = (props) => {
   let [isActive, setIsActive] = useState(false);
   let [showVolume_A, setShowVolume_A] = useState(false);
   let [showVolume_B, setShowVolume_B] = useState(false);
+  let [showVolume_C, setShowVolume_C] = useState(false);
 
   // var [sideA, setSideA] = useState(0);
   // var [sideB, setSideB] = useState(0);
@@ -34,9 +35,13 @@ const Cubes = (props) => {
   //Dragging logic
   const cube_aRef = useRef(); // ref for cube A
   const cube_bRef = useRef(); // ref for cube B
+  const cube_cRef = useRef(); // ref for cube C
 
   const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA // side A=2
-  const [cubeB, setCubeB] = useState([4, 0.5, 1]); // origine position for cubeB // side B=1
+
+  const [cubeB, setCubeB] = useState([4, 1.5, 0]); // origine position for cubeB // side B=1
+ 
+  const [cubeC, setCubeC] = useState([-4, 1.5, 0]); // origine position for cubeB // side C=1
 
   const { size, viewport } = useThree();
   let aspect = size.width / viewport.width;
@@ -60,13 +65,16 @@ const Cubes = (props) => {
   const cube_B = () => {
     setShowVolume_B(true);
   }
+  const cube_C = () => {
+    setShowVolume_C(true);
+  }
 
   return (
     <>
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, 9]}>
+      <PerspectiveCamera makeDefault position={[0, 2, 15]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(70)}
@@ -103,7 +111,7 @@ const Cubes = (props) => {
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
-          <boxGeometry args={[3, 3, 3]} />
+          <boxGeometry args={[3, 3, 1]} />
           <meshStandardMaterial color="#3dbf55" opacity={0.7} transparent />
           <Text
             scale={[3, 3, 3]}
@@ -127,8 +135,8 @@ const Cubes = (props) => {
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeA[0], cubeA[1] + 1.6, cubeA[2] + 1.5]}
-            scale={[3, 3, 3]}
+            position={[cubeA[0], cubeA[1] + 1.6, cubeA[2] + 0.5]}
+            scale={[3, 3, 1]}
             color="black"
             anchorX="center"
             anchorY="middle"
@@ -140,7 +148,7 @@ const Cubes = (props) => {
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeA[0] - 1.6, cubeA[1], cubeA[2] + 1.5]}
+            position={[cubeA[0] - 1.6, cubeA[1], cubeA[2] + 0.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -158,16 +166,96 @@ const Cubes = (props) => {
             anchorX="center"
             anchorY="middle"
           >
-            a
+            b
           </Text>
         </mesh>
       </group>
 
-      {/* Cube B */}
+
+      {/* cube B geometry */}
       <group onClick={cube_B} ref={cube_bRef}>
         <mesh
           castShadow
           position={cubeB}
+          onPointerOver={(e) => {
+            //console.log("mouse on cube A");
+            // setAngleAzimuthal(0);
+            // setAnglePolar(0);
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+            //console.log("mouse not on cube A");
+            // setAngleAzimuthal(180);
+            // setAnglePolar(70);
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[3, 3, 1]} />
+          <meshStandardMaterial color="#3dbf55" opacity={0.7} transparent />
+          <Text
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cube B
+          </Text>
+          {/* {showVolume_A && <Text
+            position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Volume of cube A = a * a * a = a&#179;
+          </Text>} */}
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeA[0] + 2.4, cubeA[1] , cubeA[2] + 0.5]}
+            scale={[3, 3, 1]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeA[0]+4.0, cubeA[1]+1.6, cubeA[2] + 0.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeA[0] - 1.6, cubeA[1] + 1.6, cubeA[2]]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+      </group>
+
+      {/* Cube C */}
+      <group onClick={cube_C} ref={cube_cRef}>
+        <mesh
+          castShadow
+          position={cubeC}
           onPointerOver={(e) => {
             //console.log("mouse on cube B");
             // setAngleAzimuthal(0);
@@ -182,15 +270,15 @@ const Cubes = (props) => {
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
-          <boxGeometry args={[1, 1, 1]} />
+          <boxGeometry args={[3, 3, 1]} />
           <meshStandardMaterial color="#155fe8" opacity={0.7} transparent />
           <Text
-            scale={[2, 2, 2]}
+            scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            Cube B
+            Cube C
           </Text>
         </mesh>
 
@@ -198,7 +286,7 @@ const Cubes = (props) => {
           {/* top side notation */}
           <Text
             position={[cubeB[0], cubeB[1] + 0.6, cubeB[2] + 0.5]}
-            scale={[2, 2, 2]}
+            scale={[3, 3, 1]}
             color="black"
             anchorX="center"
             anchorY="middle"
@@ -262,4 +350,4 @@ const Cubes = (props) => {
   );
 };
 
-export default Cubes;
+export default CuboidsA;

@@ -29,7 +29,7 @@ const CubeValuesMidContent = () => {
 
         if (value !== secondvalue) {
 
-            navigate("/letusverify/gridcreation");
+            navigate("/letusverify/twocubes");
             toast.success("Same denominators are not allowed", {
                 position: "top-center",
                 autoClose: 3000,

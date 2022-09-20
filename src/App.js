@@ -18,8 +18,10 @@ import AItheory1 from "./components/Theory/AItheory1";
 
 import UnderConstruction from "./components/MajorComponents/UnderConstruction";
 import CubeValues from "./components/CubeValues";
-import Cubes from "./components/Cubes";
 import CubesMidComponent from "./components/CubesMidContent";
+import TwoCubes from "./components/TwoCubes";
+import ThreeCuboids from "./components/ThreeCuboids";
+
 
 
 
@@ -36,6 +38,14 @@ const App = () => {
       <Route
         path="/letusverify/cubesmidcontent"
         element={<CubesMidComponent />}
+      />
+      <Route
+        path="/letusverify/twocubes"
+        element={<TwoCubes />}
+      />
+      <Route
+        path="/letusverify/threecubes"
+        element={<ThreeCuboids />}
       />
 
 
