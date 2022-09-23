@@ -2,25 +2,25 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 import Help from "./components/HelpVideo/Help";
-
 import Errorpage from "./components/MajorComponents/Errorpage";
 import Launchpage from "./components/MajorComponents/Launchpage";
 import Letusverify from "./components/MajorComponents/Letusverify";
 
 import Play from "./components/quiz/Play";
 import QuizInstructions from "./components/quiz/QuizInstructions";
-
-
 import AItheory1 from "./components/Theory/AItheory1";
-
-
-
-
 import UnderConstruction from "./components/MajorComponents/UnderConstruction";
+
+
+
+
 import CubeValues from "./components/CubeValues";
 import CubesMidComponent from "./components/CubesMidContent";
 import TwoCubes from "./components/TwoCubes";
-import ThreeCuboids from "./components/ThreeCuboids";
+import ThreeCuboidsA from "./components/ThreeCuboidsA";
+import ThreeCuboidsB from "./components/ThreeCuboidsB";
+import DragAndDrop from "./components/DragAndDrop";
+import FbxDemo from "./components/FbxDemo";
 
 
 
@@ -44,9 +44,22 @@ const App = () => {
         element={<TwoCubes />}
       />
       <Route
-        path="/letusverify/threecubes"
-        element={<ThreeCuboids />}
+        path="/letusverify/threecubesa"
+        element={<ThreeCuboidsA />}
       />
+      <Route
+        path="/letusverify/threecuboidsb"
+        element={<ThreeCuboidsB />}
+      />
+      <Route
+        path="/letusverify/draganddrop"
+        element={<DragAndDrop />}
+      />
+      <Route
+        path="/letusverify/fbxdemo"
+        element={<FbxDemo />}
+      />
+
 
 
       

@@ -11,8 +11,7 @@ const expression = () => {
 
 const Instruction_1 = () => {
   return <ul>
-  <b>Step2: </b>Enter all values into their respective boxes and click on{" "}
-  <b>CALCULATE FRACTION</b> button.
+  Enter the value for cube A and cube B either(a=3 and b=1) or (a=4 and b=2).
 </ul>;
 };
 

@@ -8,35 +8,27 @@ import BackNextBar from './MajorComponents/BackNextBar';
 const CubeValuesMidContent = () => {
 
     const navigate = useNavigate();
-    const [value, setValue] = useState();
-    const [secondvalue, setSecondvalue] = useState();
+    const [value, setValue] = useState("");
+    const [secondvalue, setSecondvalue] = useState("");
 
     const inputValues = (event) => {
-        setValue(event.target.value);
-        //localStorage.setItem("val1", event.target.value);
-
+        setValue(parseInt(event.target.value));
+        localStorage.setItem("val1", event.target.value);
     };
-
+   
     const inputValuestwo = (event) => {
-        setSecondvalue(event.target.value);
-        //localStorage.setItem("val2", event.target.value);
-
-
+        setSecondvalue(parseInt(event.target.value));
+        localStorage.setItem("val2", event.target.value);
     };
 
     const submitoperation = (e) => {
         e.preventDefault();
-
-        if (value !== secondvalue) {
-
+        if ((value === 3) && (secondvalue === 1)) {
             navigate("/letusverify/twocubes");
-            toast.success("Same denominators are not allowed", {
-                position: "top-center",
-                autoClose: 3000,
-            });
-
+        } else if (value === 4 && secondvalue === 2) {
+            navigate("/letusverify/twocubes");
         } else {
-            toast.error("Same denominators are not allowed", {
+            toast.error("Either (a=3 and b=1) or (a=4 and b=2)", {
                 position: "top-center",
                 autoClose: 3000,
             });

@@ -5,8 +5,17 @@ import Footercomp from './MajorComponents/Footercomp'
 import Headcomp from './MajorComponents/Headcomp'
 import Middlecomp from './MajorComponents/Middlecomp'
 import TwoCubesMidContent from './TwoCubesMidContent'
+import { toast } from 'react-toastify';
 
 const TwoCubes = () => {
+
+  // User input values
+  let cubeA = parseInt(localStorage.getItem("val1"));
+  let cubeB = parseInt(localStorage.getItem("val2"));
+  toast.success(`cube of side a=${cubeA} and cube of side b=${cubeB} is drawn successfully `,{
+    position: "top-center",
+    autoClose: 3000,
+  })
   return (
     <div
       style={{
@@ -25,7 +34,7 @@ const TwoCubes = () => {
        
       />
 
-      <Footercomp footheight="15%" instruction={Instru.default()} />
+      <Footercomp footheight="15%" instruction={Instru.Instruction_1()} />
     </div>
   )
 }

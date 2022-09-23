@@ -1,14 +1,12 @@
 import React from 'react'
 import backgroundImg from "../Img/backg.jpg";
 import * as Instru from "./MajorComponents/Instruction"
-
-import CubeValuesMidContent from './CubeValuesMidContent'
+import FbxDemoMidContent from './FbxDemoMidContent'
+import Footercomp from './MajorComponents/Footercomp'
 import Headcomp from './MajorComponents/Headcomp'
-import Middlecomp from './MajorComponents/Middlecomp';
-import Footercomp from './MajorComponents/Footercomp';
-import { ToastContainer } from 'react-toastify';
+import Middlecomp from './MajorComponents/Middlecomp'
 
-const CubeValues = () => {
+const FbxDemo = () => {
   return (
     <div
       style={{
@@ -21,16 +19,15 @@ const CubeValues = () => {
       <Headcomp />
 
       <Middlecomp
-        midheight="70%"
-        midcontent={<CubeValuesMidContent />}
+        midheight="75%"
+        midcontent={<FbxDemoMidContent />}
         toolvisible="hidden"
-       
+      
       />
 
-      <Footercomp footheight="20%" instruction={Instru.Instruction_1()} />
-      <ToastContainer/>
+      <Footercomp footheight="15%" instruction={Instru.default()} />
     </div>
   )
 }
 
-export default CubeValues
+export default FbxDemo

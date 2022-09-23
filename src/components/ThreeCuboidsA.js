@@ -4,10 +4,10 @@ import * as Instru from "./MajorComponents/Instruction"
 import Footercomp from './MajorComponents/Footercomp'
 import Headcomp from './MajorComponents/Headcomp'
 import Middlecomp from './MajorComponents/Middlecomp'
-import ThreeCuboidsMidContent from './ThreeCuboidsMidContent';
+import ThreeCuboidsAMidContent from './ThreeCuboidsAMidContent';
 
 
-const ThreeCuboids = () => {
+const ThreeCuboidsA = () => {
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ const ThreeCuboids = () => {
 
       <Middlecomp
         midheight="75%"
-        midcontent={<ThreeCuboidsMidContent />}
+        midcontent={<ThreeCuboidsAMidContent />}
         toolvisible="hidden"
        
       />
@@ -31,4 +31,4 @@ const ThreeCuboids = () => {
   )
 }
 
-export default ThreeCuboids
+export default ThreeCuboidsA

@@ -4,16 +4,16 @@ import { Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Canvas } from 'react-three-fiber'
 import Cubes from './Cubes'
+import CuboidsA from './CuboidsA'
 import BackNextBar from './MajorComponents/BackNextBar'
 
-const TwoCubesMidContent = () => {
+const ThreeCuboidsAMidContent = () => {
 
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
 
     const onNext = () =>{
-       navigate("/letusverify/threecubesa"); 
-
+        navigate("/letusverify/threecuboidsb")
     }
 
     const pull_data = (data) => {
@@ -24,7 +24,7 @@ const TwoCubesMidContent = () => {
             <div style={{ height: "80%", width: '100%' }}>
                 <Canvas shadows camera={{ position: [-3, 2, 5], fov: 40 }} >
                     <Suspense fallback={null}>
-                        <Cubes func={pull_data} />
+                        <CuboidsA func={pull_data} />
                     </Suspense>
                 </Canvas>
             </div>
@@ -49,6 +49,16 @@ const TwoCubesMidContent = () => {
                   style={{ width: "20%" }}
                   required
                 ></input> </label></div>
+                  <div className='my-1'><label style={{ fontSize: "1.2vw" }}>
+                Volume of cube with side a 3 units =
+                <input
+                 // disabled={disabled && minusCount === secondValue ? false : true}
+                  id="first"
+                  type="number"
+                  //onBlur={inputValues}
+                  style={{ width: "20%" }}
+                  required
+                ></input> </label></div>
                
             </div>
             <BackNextBar
@@ -65,4 +75,4 @@ const TwoCubesMidContent = () => {
     )
 }
 
-export default TwoCubesMidContent
+export default ThreeCuboidsAMidContent

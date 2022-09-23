@@ -104,7 +104,7 @@ const Cubes = (props) => {
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
           <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial color="#3dbf55" opacity={0.7} transparent />
+          <meshStandardMaterial color="#FF1493" opacity={0.7} transparent />
           <Text
             scale={[3, 3, 3]}
             color="black"

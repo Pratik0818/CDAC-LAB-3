@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { DoubleSide } from "three";
 import { toast } from "react-toastify";
 
-const CuboidsA = (props) => {
+const CuboidsB = (props) => {
   let a = localStorage.getItem("A");
   //console.log(a);
 
@@ -74,7 +74,7 @@ const CuboidsA = (props) => {
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, 12]}>
+      <PerspectiveCamera makeDefault position={[0, 2, 9]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(70)}
@@ -111,15 +111,15 @@ const CuboidsA = (props) => {
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
-          <boxGeometry args={[3, 3, 1]} />
-          <meshStandardMaterial color="#008000" opacity={0.7} transparent />
+          <boxGeometry args={[1, 1, 3]} />
+          <meshStandardMaterial color="#B22222" opacity={0.7} transparent />
           <Text
-            scale={[3, 3, 3]}
+            scale={[2.5, 2.5, 2.5]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            Cuboid L
+            Cuboid P
           </Text>
           {/* {showVolume_A && <Text
             position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
@@ -135,38 +135,38 @@ const CuboidsA = (props) => {
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeA[0], cubeA[1] + 1.6, cubeA[2] + 0.5]}
-            scale={[3, 3, 1]}
+            position={[cubeA[0], cubeA[1] + 0.6, cubeA[2] + 1.5]}
+            scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            a
+           b
           </Text>
         </mesh>
 
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeA[0] - 1.6, cubeA[1], cubeA[2] + 0.5]}
-            scale={[3, 3, 3]}
-            color="black"
-            anchorX="center"
-            anchorY="middle"
-          >
-            a
-          </Text>
-        </mesh>
-        <mesh>
-          {/* top left side notation */}
-          <Text
-            position={[cubeA[0] - 1.6, cubeA[1] + 1.6, cubeA[2]]}
+            position={[cubeA[0] - 0.6, cubeA[1], cubeA[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
             b
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeA[0] - 0.6, cubeA[1] + 0.6, cubeA[2]+ 0.1 ]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+           a
           </Text>
         </mesh>
       </group>
@@ -191,15 +191,15 @@ const CuboidsA = (props) => {
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
-          <boxGeometry args={[3, 3, 1]} />
-          <meshStandardMaterial color="#008000" opacity={0.7} transparent />
+          <boxGeometry args={[1, 1, 3]} />
+          <meshStandardMaterial color="#B22222" opacity={0.7} transparent />
           <Text
-            scale={[3, 3, 3]}
+            scale={[2.5, 2.5, 2.5]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            Cuboid M
+            Cuboid Q
           </Text>
           {/* {showVolume_A && <Text
             position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
@@ -215,20 +215,20 @@ const CuboidsA = (props) => {
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeA[0] + 2.4, cubeA[1] , cubeA[2] + 0.5]}
-            scale={[3, 3, 1]}
+            position={[cubeA[0] + 4.0, cubeA[1]+0.6 , cubeA[2]+1.5 ]}
+            scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            a
+            b
           </Text>
         </mesh>
 
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeA[0]+4.0, cubeA[1]+1.6, cubeA[2] + 0.5]}
+            position={[cubeA[0] + 3.4, cubeA[1] + 0.6, cubeA[2] + 0.1]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -240,7 +240,7 @@ const CuboidsA = (props) => {
         <mesh>
           {/* top left side notation */}
           <Text
-            position={[cubeA[0] + 2.4 , cubeA[1] + 1.6, cubeA[2]]}
+            position={[cubeA[0] + 3.4 , cubeA[1]  , cubeA[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -251,7 +251,7 @@ const CuboidsA = (props) => {
         </mesh>
       </group>
 
-      {/* Cube C */}
+      {/* Cube C geometry*/}
       <group onClick={cube_C} ref={cube_cRef}>
         <mesh
           castShadow
@@ -270,22 +270,22 @@ const CuboidsA = (props) => {
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
-          <boxGeometry args={[3, 3, 1]} />
-          <meshStandardMaterial color="#008000" opacity={0.7} transparent />
+          <boxGeometry args={[1, 1, 3]} />
+          <meshStandardMaterial color="#B22222" opacity={0.7} transparent />
           <Text
-            scale={[3, 3, 3]}
+            scale={[2.5, 2.5, 2.5]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            Cuboid N
+            Cuboid R
           </Text>
         </mesh>
 
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeB[0] - 9.6, cubeB[1] + 1.5, cubeB[2] ]}
+            position={[cubeB[0] - 8.0, cubeB[1] + 0.6 , cubeB[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -298,20 +298,20 @@ const CuboidsA = (props) => {
         <mesh>
           {/* top right side notation */}
           <Text
-            position={[cubeB[0] - 9.6, cubeB[1] , cubeB[2] + 0.5]}
+            position={[cubeB[0] - 8.6, cubeB[1]  , cubeB[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-            a
+            b
           </Text>
         </mesh>
 
         <mesh>
           {/* right side notation */}
           <Text
-            position={[cubeB[0] - 8.0, cubeB[1] + 1.6, cubeB[2] + 0.5 ]}
+            position={[cubeB[0] - 8.6, cubeB[1] + 0.5, cubeB[2] ]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -350,4 +350,4 @@ const CuboidsA = (props) => {
   );
 };
 
-export default CuboidsA;
+export default CuboidsB;
