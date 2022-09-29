@@ -63,7 +63,7 @@ const CubeValuesMidContent = () => {
                                     className="col-6 fw-normal  d-flex justify-content-end align-items-center"
                                     style={{ height: "100%", fontSize: "1.2vw" }}
                                 >
-                                    Enter the value of a (Range: 3 to
+                                    Enter the value of side a for cube A (Range: 3 to
                                     4)
                                 </label>
                                 <div
@@ -91,7 +91,7 @@ const CubeValuesMidContent = () => {
                                     className="col-6 fw-normal  d-flex justify-content-end align-items-center"
                                     style={{ height: "100%", fontSize: "1.2vw" }}
                                 >
-                                    Enter the value of b (Range: 1 to
+                                    Enter the value of side b for cube B (Range: 1 to
                                     2)
                                 </label>
                                 <div

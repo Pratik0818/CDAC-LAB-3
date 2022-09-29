@@ -21,6 +21,9 @@ import ThreeCuboidsA from "./components/ThreeCuboidsA";
 import ThreeCuboidsB from "./components/ThreeCuboidsB";
 import DragAndDrop from "./components/DragAndDrop";
 import FbxDemo from "./components/FbxDemo";
+import Observation from "./components/Observation";
+import ThreeCuboidAText from "./components/ThreeCuboidAText";
+import ThreeCuboidBText from "./components/ThreeCuboidBText";
 
 
 
@@ -44,11 +47,11 @@ const App = () => {
         element={<TwoCubes />}
       />
       <Route
-        path="/letusverify/threecubesa"
+        path="/letusverify/threecuboidsA"
         element={<ThreeCuboidsA />}
       />
       <Route
-        path="/letusverify/threecuboidsb"
+        path="/letusverify/threecuboidsB"
         element={<ThreeCuboidsB />}
       />
       <Route
@@ -58,6 +61,18 @@ const App = () => {
       <Route
         path="/letusverify/fbxdemo"
         element={<FbxDemo />}
+      />
+      <Route
+        path="/letusverify/observation"
+        element={<Observation />}
+      />
+      <Route
+        path="/letusverify/threecuboidAtext"
+        element={<ThreeCuboidAText />}
+      />
+      <Route
+        path="/letusverify/threecuboidBtext"
+        element={<ThreeCuboidBText />}
       />
 
 

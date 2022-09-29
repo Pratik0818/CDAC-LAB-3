@@ -3,78 +3,41 @@ import { OrbitControls, PerspectiveCamera, Text } from "@react-three/drei";
 import { angleToRadians } from "./Services.js";
 import { useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { useDrag } from "@use-gesture/react";
 import * as THREE from "three";
 import { DoubleSide } from "three";
-import { toast } from "react-toastify";
 
-const CuboidsB = (props) => {
-  let a = localStorage.getItem("A");
-  //console.log(a);
 
-  let [count, setCount] = useState(0);
-  let [isActive, setIsActive] = useState(false);
-  let [showVolume_A, setShowVolume_A] = useState(false);
-  let [showVolume_B, setShowVolume_B] = useState(false);
-  let [showVolume_C, setShowVolume_C] = useState(false);
+const CuboidsB = () => {
+  // User input values
+  let firstInput = parseInt(localStorage.getItem("val1"));
 
-  // var [sideA, setSideA] = useState(0);
-  // var [sideB, setSideB] = useState(0);
-  // var [count, setCount] = useState(0);
-
-  //console.log(angleToRadians(90));
   const orbitControlsRef = useRef(null);
-
-  //azimuthal angle variable
-  //const [angleAzimuthal, setAngleAzimuthal] = useState(150);
-  //polar angle variable
-  //const [anglePolar, setAnglePolar] = useState(60);
-
   // check whether object is dragging or not
   var [isMoving, setIsMoving] = useState(false);
-  //Dragging logic
-  const cube_aRef = useRef(); // ref for cube A
-  const cube_bRef = useRef(); // ref for cube B
-  const cube_cRef = useRef(); // ref for cube C
 
-  const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA // side A=2
+  const [cuboidP, setCuboidP] = useState([0, 1.5, 0]); // origine position for cuboidP 
 
-  const [cubeB, setCubeB] = useState([4, 1.5, 0]); // origine position for cubeB // side B=1
- 
-  const [cubeC, setCubeC] = useState([-4, 1.5, 0]); // origine position for cubeB // side C=1
+  const [cuboidQ, setCuboidQ] = useState([4, 1.5, 0]); // origine position for cuboidQ
 
-  const { size, viewport } = useThree();
-  let aspect = size.width / viewport.width;
+  const [cuboidR, setCuboidR] = useState([-4, 1.5, 0]); // origine position for cuboidR
 
- 
-
-  props.func(count);
 
   useEffect(
     (event) => {
       if (!!orbitControlsRef.current) {
-        console.log(orbitControlsRef.current + "useEffect");
+        //console.log(orbitControlsRef.current + "useEffect");
       }
     },
     [orbitControlsRef.current]
   );
 
-  const cube_A = () => {
-    setShowVolume_A(true);
-  }
-  const cube_B = () => {
-    setShowVolume_B(true);
-  }
-  const cube_C = () => {
-    setShowVolume_C(true);
-  }
 
   return (
     <>
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, 9]}>
+      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 12 : 9]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(70)}
@@ -92,21 +55,15 @@ const CuboidsB = (props) => {
         <meshStandardMaterial color="#5b87a8" side={DoubleSide} />
       </mesh>
 
-      {/* cube A geometry */}
-      <group onClick={cube_A} ref={cube_aRef}>
+      {/* cube P geometry */}
+      <group>
         <mesh
           castShadow
-          position={cubeA}
+          position={cuboidP}
           onPointerOver={(e) => {
-            //console.log("mouse on cube A");
-            // setAngleAzimuthal(0);
-            // setAnglePolar(0);
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-            //console.log("mouse not on cube A");
-            // setAngleAzimuthal(180);
-            // setAnglePolar(70);
             setIsMoving(false);
           }}
         >
@@ -121,34 +78,26 @@ const CuboidsB = (props) => {
           >
             Cuboid P
           </Text>
-          {/* {showVolume_A && <Text
-            position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
-            scale={[3, 3, 3]}
-            color="black"
-            anchorX="center"
-            anchorY="middle"
-          >
-            Volume of cube A = a * a * a = a&#179;
-          </Text>} */}
+
         </mesh>
 
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeA[0], cubeA[1] + 0.6, cubeA[2] + 1.5]}
+            position={[cuboidP[0], cuboidP[1] + 0.6, cuboidP[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-           b
-          </Text>
+            b
+          </Text> 
         </mesh>
 
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeA[0] - 0.6, cubeA[1], cubeA[2] + 1.5]}
+            position={[cuboidP[0] - 0.6, cuboidP[1], cuboidP[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -160,33 +109,26 @@ const CuboidsB = (props) => {
         <mesh>
           {/* top left side notation */}
           <Text
-            position={[cubeA[0] - 0.6, cubeA[1] + 0.6, cubeA[2]+ 0.1 ]}
+            position={[cuboidP[0] - 0.6, cuboidP[1] + 0.6, cuboidP[2] + 0.1]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
             anchorY="middle"
           >
-           a
+            a
           </Text>
         </mesh>
       </group>
 
-
-      {/* cube B geometry */}
-      <group onClick={cube_B} ref={cube_bRef}>
+      {/* cube Q geometry */}
+      <group >
         <mesh
           castShadow
-          position={cubeB}
+          position={cuboidQ}
           onPointerOver={(e) => {
-            //console.log("mouse on cube A");
-            // setAngleAzimuthal(0);
-            // setAnglePolar(0);
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-            //console.log("mouse not on cube A");
-            // setAngleAzimuthal(180);
-            // setAnglePolar(70);
             setIsMoving(false);
           }}
         >
@@ -201,21 +143,13 @@ const CuboidsB = (props) => {
           >
             Cuboid Q
           </Text>
-          {/* {showVolume_A && <Text
-            position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
-            scale={[3, 3, 3]}
-            color="black"
-            anchorX="center"
-            anchorY="middle"
-          >
-            Volume of cube A = a * a * a = a&#179;
-          </Text>} */}
+
         </mesh>
 
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeA[0] + 4.0, cubeA[1]+0.6 , cubeA[2]+1.5 ]}
+            position={[cuboidP[0] + 4.0, cuboidP[1] + 0.6, cuboidP[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -228,7 +162,7 @@ const CuboidsB = (props) => {
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeA[0] + 3.4, cubeA[1] + 0.6, cubeA[2] + 0.1]}
+            position={[cuboidP[0] + 3.4, cuboidP[1] + 0.6, cuboidP[2] + 0.1]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -240,7 +174,7 @@ const CuboidsB = (props) => {
         <mesh>
           {/* top left side notation */}
           <Text
-            position={[cubeA[0] + 3.4 , cubeA[1]  , cubeA[2] + 1.5]}
+            position={[cuboidP[0] + 3.4, cuboidP[1], cuboidP[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -251,21 +185,15 @@ const CuboidsB = (props) => {
         </mesh>
       </group>
 
-      {/* Cube C geometry*/}
-      <group onClick={cube_C} ref={cube_cRef}>
+      {/* Cube R geometry*/}
+      <group >
         <mesh
           castShadow
-          position={cubeC}
+          position={cuboidR}
           onPointerOver={(e) => {
-            //console.log("mouse on cube B");
-            // setAngleAzimuthal(0);
-            // setAnglePolar(0);
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-            //console.log("mouse not on cube B");
-            // setAngleAzimuthal(150);
-            // setAnglePolar(70);
             setIsMoving(false);
           }}
         >
@@ -285,7 +213,7 @@ const CuboidsB = (props) => {
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeB[0] - 8.0, cubeB[1] + 0.6 , cubeB[2] + 1.5]}
+            position={[cuboidQ[0] - 8.0, cuboidQ[1] + 0.6, cuboidQ[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -298,7 +226,7 @@ const CuboidsB = (props) => {
         <mesh>
           {/* top right side notation */}
           <Text
-            position={[cubeB[0] - 8.6, cubeB[1]  , cubeB[2] + 1.5]}
+            position={[cuboidQ[0] - 8.6, cuboidQ[1], cuboidQ[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -311,7 +239,7 @@ const CuboidsB = (props) => {
         <mesh>
           {/* right side notation */}
           <Text
-            position={[cubeB[0] - 8.6, cubeB[1] + 0.5, cubeB[2] ]}
+            position={[cuboidQ[0] - 8.6, cuboidQ[1] + 0.5, cuboidQ[2]]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -321,19 +249,6 @@ const CuboidsB = (props) => {
           </Text>
         </mesh>
       </group>
-
-      {/* volume text*/}
-      {/* {showVolume_B && <mesh>
-        <Text
-          position={[6.5, 1, 1.5]}
-          scale={[2, 2, 2]}
-          color="black"
-          anchorX="center"
-          anchorY="middle"
-        >
-          Volume of Cube B = b * b * b = b&#179;
-        </Text>
-      </mesh>} */}
 
       {/* ambient light */}
       <ambientLight args={["#ffffff", 1]} />
@@ -345,7 +260,7 @@ const CuboidsB = (props) => {
         args={["#ffffff", 0.5, 100, 2]}
       />
 
-     
+
     </>
   );
 };

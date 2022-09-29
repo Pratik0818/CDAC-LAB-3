@@ -8,8 +8,8 @@ import * as THREE from "three";
 import { DoubleSide } from "three";
 
 const FinalCube = (props) => {
-  let a = localStorage.getItem("A");
-  //console.log(a);
+  // User input values
+  let firstInput = parseInt(localStorage.getItem("val1"));
 
   let [count, setCount] = useState(0);
 
@@ -26,12 +26,12 @@ const FinalCube = (props) => {
   const cube_cRef = useRef(); // ref for cube C
 
   const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA 
-  const [cubeL, setCubeL] = useState([-5.0, 1.5, 0]); // origine position for cubeL
+  const [cubeL, setCubeL] = useState([-5.0, 1.6, 0]); // origine position for cubeL
   const [cubeM, setCubeM] = useState([0, 5, 0]); // origine position for cubeM
-  const [cubeN, setCubeN] = useState([0, 1.5, -5.0]); // origine position for cubeN
+  const [cubeN, setCubeN] = useState([0, 1.6, -5.0]); // origine position for cubeN
   const [cubeP, setCubeP] = useState([-5.0, 5.0, 0]); // origine position for cubeP
   const [cubeQ, setCubeQ] = useState([0, 5.0, -5.0]); // origine position for cubeQ
-  const [cubeR, setCubeR] = useState([-5.0, 1.5, -5.0]); // origine position for cubeR
+  const [cubeR, setCubeR] = useState([-5.0, 1.6, -5.0]); // origine position for cubeR
   const [cubeB, setCubeB] = useState([-5.0, 5.0, -3.0]); // origine position for cubeB
 
 
@@ -57,13 +57,10 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cuboid M
   const bindCuboidM = useDrag(
     ({ offset: [y] }) => {
-      if (count === 0) {
-        const [x, , z] = cubeM;
-        setCubeM([x, (-y / aspect), z]);
-        setCubeM([0, 3.5, 0]);
-        setCount(count + 1);
-
-      }
+      const [x, , z] = cubeM;
+      setCubeM([x, (y / aspect), z]);
+      setCubeM([0, 3.5, 0]);
+      setCount(count + 1);
 
     }
     ,
@@ -73,12 +70,12 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cuboid N
   const bindCuboidN = useDrag(
     ({ offset: [z] }) => {
-      if (count === 1) {
-        const [x, y,] = cubeN;
-        setCubeN([x, y, z / aspect]);
-        setCubeN([0, 1.5, -2.0]);
-        setCount(count + 1);
-      }
+
+      const [x, y,] = cubeN;
+      setCubeN([x, y, z / aspect]);
+      setCubeN([0, 1.5, -2.0]);
+      setCount(count + 1);
+
     }
     ,
     { pointerEvents: true }
@@ -87,12 +84,12 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cuboid L
   const bindCuboidL = useDrag(
     ({ offset: [x] }) => {
-      if (count === 2) {
-        const [, y, z] = cubeL;
-        setCubeL([x / aspect, y, z]);
-        setCubeL([-2.0, 1.5, 0]);
-        setCount(count + 1);
-      }
+
+      const [, y, z] = cubeL;
+      setCubeL([x / aspect, y, z]);
+      setCubeL([-2.0, 1.5, 0]);
+      setCount(count + 1);
+
 
     }
     ,
@@ -102,12 +99,12 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cuboid Q
   const bindCuboidQ = useDrag(
     ({ offset: [z, y] }) => {
-      if (count === 3) {
-        const [x, ,] = cubeQ;
-        setCubeQ([x, y / aspect, z / aspect]);
-        setCubeQ([0, 3.5, -2.0]);
-        setCount(count + 1);
-      }
+
+      const [x, ,] = cubeQ;
+      setCubeQ([x, y / aspect, z / aspect]);
+      setCubeQ([0, 3.5, -2.0]);
+      setCount(count + 1);
+
     }
     ,
     { pointerEvents: true }
@@ -116,12 +113,12 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cuboid P
   const bindCuboidP = useDrag(
     ({ offset: [x, y] }) => {
-      if (count === 4) {
-        const [, , z] = cubeP;
-        setCubeP([x / aspect, y / aspect, z]);
-        setCubeP([-2.0, 3.5, 0]);
-        setCount(count + 1);
-      }
+
+      const [, , z] = cubeP;
+      setCubeP([x / aspect, y / aspect, z]);
+      setCubeP([-2.0, 3.5, 0]);
+      setCount(count + 1);
+
 
     }
     ,
@@ -131,12 +128,12 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cuboid R
   const bindCuboidR = useDrag(
     ({ offset: [x, z] }) => {
-      if (count === 5) {
-        const [, , y] = cubeR;
-        setCubeR([x / aspect, y, z / aspect]);
-        setCubeR([-2.0, 1.5, -2.0]);
-        setCount(count + 1);
-      }
+
+      const [, , y] = cubeR;
+      setCubeR([x / aspect, y, z / aspect]);
+      setCubeR([-2.0, 1.5, -2.0]);
+      setCount(count + 1);
+
     }
     ,
     { pointerEvents: true }
@@ -145,12 +142,11 @@ const FinalCube = (props) => {
   // Drag and drop logic of Cube B
   const bindCubeB = useDrag(
     ({ offset: [x, y, z] }) => {
-      if (count === 6) {
-        const [, ,] = cubeB;
-        setCubeB([x / aspect, y / aspect, z / aspect]);
-        setCubeB([-2.0, 3.5, - 2.0]);
-        setCount(count + 1);
-      }
+      const [, ,] = cubeB;
+      setCubeB([x / aspect, y / aspect, z / aspect]);
+      setCubeB([-2.0, 3.5, - 2.0]);
+      setCount(count + 1);
+
     }
     ,
     { pointerEvents: true }
@@ -161,12 +157,13 @@ const FinalCube = (props) => {
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, 15]}>
+      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 17 : 15]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(70)}
           maxPolarAngle={angleToRadians(88)}
           enableRotate={!isMoving}
+          enableZoom={false}
         />
       </PerspectiveCamera>
 
@@ -203,13 +200,13 @@ const FinalCube = (props) => {
           >
             Cube A
           </Text>
-         
+
         </mesh>
 
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeA[0], cubeA[1] + 1.6, cubeA[2] + 1.5]}
+            position={[cubeA[0], cubeA[1] - 1.4, cubeA[2] + 1.6]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -222,7 +219,7 @@ const FinalCube = (props) => {
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeA[0] - 1.6, cubeA[1], cubeA[2] + 1.5]}
+            position={[cubeA[0] + 1.6, cubeA[1], cubeA[2] + 1.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -246,7 +243,14 @@ const FinalCube = (props) => {
       </group>
 
       {/* cuboid L geometry */}
-      <group {...bindCuboidL()}>
+      {count >= 2 && <group onClick={() => {
+        if ((cubeL[0] !== -2.0) && (cubeL[1] !== 1.5)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeL([-2.0, 1.5, 0]);
+      }}>
+
         <mesh
           castShadow
           position={cubeL}
@@ -274,21 +278,12 @@ const FinalCube = (props) => {
           >
             Cuboid L
           </Text>
-          {/* {showVolume_A && <Text
-            position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
-            scale={[3, 3, 3]}
-            color="black"
-            anchorX="center"
-            anchorY="middle"
-          >
-            Volume of cube A = a * a * a = a&#179;
-          </Text>} */}
         </mesh>
 
         <mesh>
           {/* top side notation */}
           <Text
-            position={[cubeL[0], cubeL[1] + 1.6, cubeL[2] + 1.5]}
+            position={[cubeL[0], cubeL[1] - 1.4, cubeL[2] + 1.6]}
             scale={[3, 3, 1]}
             color="black"
             anchorX="center"
@@ -322,10 +317,17 @@ const FinalCube = (props) => {
             a
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* cuboid M geometry */}
-      <group {...bindCuboidM()}>
+      {count >= 0 && <group onClick={() => {
+        if (cubeM[1] !== 3.5) {
+          count = count + 1;
+          setCount(count);
+
+        }
+        setCubeM([0, 3.5, 0]);
+      }}>
         <mesh
           castShadow
           position={cubeM}
@@ -392,10 +394,19 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* cuboid N geometry */}
-      <group {...bindCuboidN()}>
+      {count >= 1 && <group onClick={() => {
+        console.log("first count ", count);
+        if ((cubeN[1] !== 1.5) && (cubeN[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+
+        }
+        setCubeN([0, 1.5, -2.0]);
+      }}
+      >
         <mesh
           castShadow
           position={cubeN}
@@ -471,10 +482,16 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* cuboid P geometry */}
-      <group {...bindCuboidP()}>
+      {count >= 4 && <group onClick={() => {
+        if ((cubeP[0] !== -2.0) && (cubeP[1] !== 3.5)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeP([-2.0, 3.5, 0]);
+      }}>
         <mesh
           castShadow
           position={cubeP}
@@ -550,10 +567,16 @@ const FinalCube = (props) => {
             a
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* Cuboid Q geometry */}
-      <group {...bindCuboidQ()}>
+      {count >= 3 && <group onClick={() => {
+        if ((cubeQ[1] !== 3.5) && (cubeQ[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeQ([0, 3.5, -2.0]);
+      }}>
         <mesh
           castShadow
           position={cubeQ}
@@ -629,10 +652,16 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* Cuboid R geometry */}
-      <group {...bindCuboidR()}>
+      {count >= 5 && <group onClick={() => {
+        if ((cubeR[0] !== -2.0) && (cubeR[1] !== 1.5) && (cubeR[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeR([-2.0, 1.5, -2.0]);
+      }}>
         <mesh
           castShadow
           position={cubeR}
@@ -687,7 +716,7 @@ const FinalCube = (props) => {
         <mesh>
           {/* left side notation */}
           <Text
-            position={[cubeR[0] - 0.6, cubeR[1], cubeR[2] + 1.5]}
+            position={[cubeR[0] - 0.6, cubeR[1] + 1.5, cubeR[2]]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -699,7 +728,7 @@ const FinalCube = (props) => {
         <mesh>
           {/* top left side notation */}
           <Text
-            position={[cubeR[0] - 0.6, cubeR[1] + 0.6, cubeR[2] + 0.1]}
+            position={[cubeR[0] - 0.6, cubeR[1] + 0.1, cubeR[2] + 0.5]}
             scale={[3, 3, 3]}
             color="black"
             anchorX="center"
@@ -708,10 +737,16 @@ const FinalCube = (props) => {
             a
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* Cube B geometry*/}
-      <group {...bindCubeB()}>
+      {count >= 6 && <group onClick={() => {
+        if ((cubeB[0] !== -2.0) && (cubeB[1] !== 3.5) && (cubeB[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeB([-2.0, 3.5, - 2.0]);
+      }}>
         <mesh
           castShadow
           position={cubeB}
@@ -780,20 +815,8 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
-      {/* volume text*/}
-      {/* {showVolume_B && <mesh>
-        <Text
-          position={[6.5, 1, 1.5]}
-          scale={[2, 2, 2]}
-          color="black"
-          anchorX="center"
-          anchorY="middle"
-        >
-          Volume of Cube B = b * b * b = b&#179;
-        </Text>
-      </mesh>} */}
 
       {/* ambient light */}
       <ambientLight args={["#ffffff", 1]} />

@@ -1,5 +1,7 @@
 import React from "react";
-import grid from "../../Img/Shapes/grid.png";
+import cube from "../../Img/Shapes/volume-cube.png";
+import cuboid from "../../Img/Shapes/volume-cuboid.png";
+
 import "../MajorComponents/Mid.css";
 
 const AltheoryMidContent1 = () => {
@@ -11,39 +13,36 @@ const AltheoryMidContent1 = () => {
       <div className="my-5" style={{ width: "93%" }}>
         <h6 className="">Objective</h6>
         <ul>
-          To subtract a smaller fraction ​from greater fraction with the
-          different denominators.
+          To verify the algebraic identity :(a + b)³ = a³ + b³ + 3a²b + 3ab².
         </ul>
         <h6>Pre-requisite Knowledge</h6>
         <ul>
-          <li>Concept of subtraction of natural numbers.</li>
-          <li>Concept of fractions.</li>
-          <li>Concept of grid method.</li>
+          <li>Concept of cube.</li>
+          <li>Concept of cuboid.</li>
+          <li>Addition of terms.</li>
+          <li>Multipication of numbers.</li>
+          <li>Prior knowledge of volume of cube/cuboids.</li>
         </ul>
-        <h6>What is Fraction?</h6>
+        <h6>Concept</h6>
         <ul>
-          A fraction is a numerical value that represents the parts of the
-          whole.
+          <li>An Algebric Identity is an equality, which is true for all the values of the variables in the equality. They are also used for the factorization of polynomials.
+            The algebraic equations which are valid for all values of variables in them are called algebraic identities.
+          </li>
+          <li>In this way, algebraic identities are used in the computation of algebraic exptressions and solving different polynomials.</li>
+
         </ul>
-        <h6>Parts of a Fraction</h6>
+        <h6>Cube</h6>
         <ul>
-          A fraction consists of two parts, namely the numerator and the
-          denominator. The upper part of the fraction is called the numerator
-          and the lower part of the fraction is called the denominator. For
-          example, 4/7 is a fraction. Here, 4 is the numerator and 7 is the
-          denominator.
+          A cube is a region of space formed by six identical square faces joined along their edges. Three edges join at each corner to form a vertex.
+
         </ul>
-        <h6>Unlike fraction</h6>
+        <h6>Volume of Cube</h6>
         <ul>
           <li>
-            Fractions with the different denominators are called unlike
-            fractions.
+          The volume of the cube is the space contained in it. Suppose, if an object is in cubical shape and we need to immerse  any material in it, say water, then measure of water in litres to be kept in the object is calculated by its volume. 
           </li>
-          <li> Thus, 1/5, 2/7, 3/2, 8/5 are all like fractions.</li>
-        </ul>
-
-        <h6>Grid representation of fraction</h6>
-        <img
+          <li> The formula of the volume is given by : Volume of cube = (side)³</li>
+          <img
           className=""
           style={{
             backgroundRepeat: "no-repeat",
@@ -51,15 +50,34 @@ const AltheoryMidContent1 = () => {
             maxHeight: "50%",
             maxWidth: "50%",
           }}
-          src={grid}
+          src={cube}
           alt="img"
         />
+        </ul>
 
-        <p>
-          We can represent a fraction numerator/denominator by letting a
-          rectangular grid consisting of denominator stand for one whole and
-          then numerator stand for the part of one whole.
-        </p>
+        <h6>Cuboid</h6>
+      <ul>
+      A cuboid is a 3-D shape with sides that are rectangular. Cuboids have six surface and twelve edges. Objects that are cuboid include books, match-boxes and shoe-boxes. If a cuboid has faces that are all square it is a cube. All the angles of cuboid are right angles.
+
+      </ul>
+<h6>Volume of Cuboid</h6>
+<ul>
+  <li>Volume of cuboid is the total spaces occupied by the cuboid in a three dimensional space. A cuboid is a three-dimensional structure having six rectangular faces. These six faces of the cuboid exist as a pair of three parallel faces.</li>
+  <li>Therefore, the volume is a measure based on the dimensions of these faces, i.e. length, width and height.</li>
+  <li>Volume of cubiod =  length * width * height (cubic unit)</li>
+  <img
+          className=""
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            maxHeight: "50%",
+            maxWidth: "50%",
+          }}
+          src={cuboid}
+          alt="img"
+        />
+</ul>
+       
 
       </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { ListItemText } from "@mui/material";
-import crossmulti from "../Img/crossmultiplication.png";
+//import crossmulti from "../Img/crossmultiplication.png";
 
 const ActStartPopupContent = () => {
   return (
@@ -29,7 +29,7 @@ const ActStartPopupContent = () => {
             maxWidth: "100%",
 
           }}
-          src={crossmulti}
+         // src={crossmulti}
           alt="img"
         />
       </ListItemText>

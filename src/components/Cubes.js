@@ -1,72 +1,41 @@
 import React, { useEffect } from "react";
 import { OrbitControls, PerspectiveCamera, Text } from "@react-three/drei";
 import { angleToRadians } from "./Services.js";
-import { useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { useDrag } from "@use-gesture/react";
 import * as THREE from "three";
 import { DoubleSide } from "three";
-import { toast } from "react-toastify";
 
-const Cubes = (props) => {
-  let a = localStorage.getItem("A");
-  //console.log(a);
 
-  let [count, setCount] = useState(0);
-  let [isActive, setIsActive] = useState(false);
-  let [showVolume_A, setShowVolume_A] = useState(false);
-  let [showVolume_B, setShowVolume_B] = useState(false);
+const Cubes = () => {
 
-  // var [sideA, setSideA] = useState(0);
-  // var [sideB, setSideB] = useState(0);
-  // var [count, setCount] = useState(0);
+  // User input values
+  let firstInput = parseInt(localStorage.getItem("val1"));
 
-  //console.log(angleToRadians(90));
   const orbitControlsRef = useRef(null);
-
-  //azimuthal angle variable
-  //const [angleAzimuthal, setAngleAzimuthal] = useState(150);
-  //polar angle variable
-  //const [anglePolar, setAnglePolar] = useState(60);
 
   // check whether object is dragging or not
   var [isMoving, setIsMoving] = useState(false);
-  //Dragging logic
-  const cube_aRef = useRef(); // ref for cube A
-  const cube_bRef = useRef(); // ref for cube B
 
-  const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA // side A=2
-  const [cubeB, setCubeB] = useState([4, 0.5, 1]); // origine position for cubeB // side B=1
+  const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA 
+  const [cubeB, setCubeB] = useState([4, 1.5, 1]); // origine position for cubeB 
 
-  const { size, viewport } = useThree();
-  let aspect = size.width / viewport.width;
-
- 
-
-  props.func(count);
 
   useEffect(
     (event) => {
       if (!!orbitControlsRef.current) {
-        console.log(orbitControlsRef.current + "useEffect");
+        //console.log(orbitControlsRef.current + "useEffect");
       }
     },
     [orbitControlsRef.current]
   );
 
-  const cube_A = () => {
-    setShowVolume_A(true);
-  }
-  const cube_B = () => {
-    setShowVolume_B(true);
-  }
 
   return (
     <>
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, 9]}>
+      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 11 : 9]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(70)}
@@ -85,20 +54,14 @@ const Cubes = (props) => {
       </mesh>
 
       {/* cube A geometry */}
-      <group onClick={cube_A} ref={cube_aRef}>
+      <group >
         <mesh
           castShadow
           position={cubeA}
           onPointerOver={(e) => {
-            //console.log("mouse on cube A");
-            // setAngleAzimuthal(0);
-            // setAnglePolar(0);
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-            //console.log("mouse not on cube A");
-            // setAngleAzimuthal(180);
-            // setAnglePolar(70);
             setIsMoving(false);
           }}
         >
@@ -113,15 +76,6 @@ const Cubes = (props) => {
           >
             Cube A
           </Text>
-          {/* {showVolume_A && <Text
-            position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
-            scale={[3, 3, 3]}
-            color="black"
-            anchorX="center"
-            anchorY="middle"
-          >
-            Volume of cube A = a * a * a = a&#179;
-          </Text>} */}
         </mesh>
 
         <mesh>
@@ -163,8 +117,8 @@ const Cubes = (props) => {
         </mesh>
       </group>
 
-      {/* Cube B */}
-      <group onClick={cube_B} ref={cube_bRef}>
+      {/* Cube B geometry */}
+      <group  >
         <mesh
           castShadow
           position={cubeB}
@@ -234,19 +188,6 @@ const Cubes = (props) => {
         </mesh>
       </group>
 
-      {/* volume text*/}
-      {/* {showVolume_B && <mesh>
-        <Text
-          position={[6.5, 1, 1.5]}
-          scale={[2, 2, 2]}
-          color="black"
-          anchorX="center"
-          anchorY="middle"
-        >
-          Volume of Cube B = b * b * b = b&#179;
-        </Text>
-      </mesh>} */}
-
       {/* ambient light */}
       <ambientLight args={["#ffffff", 1]} />
 
@@ -257,7 +198,7 @@ const Cubes = (props) => {
         args={["#ffffff", 0.5, 100, 2]}
       />
 
-     
+
     </>
   );
 };

@@ -5,9 +5,18 @@ import Footercomp from './MajorComponents/Footercomp'
 import Headcomp from './MajorComponents/Headcomp'
 import Middlecomp from './MajorComponents/Middlecomp'
 import ThreeCuboidsAMidContent from './ThreeCuboidsAMidContent';
+import { toast, ToastContainer } from 'react-toastify';
+import { useEffect } from 'react';
 
 
 const ThreeCuboidsA = () => {
+
+  useEffect(() => {
+    toast.success("Three Cuboids of dimensions a*a*b is drawn successfully ", {
+      position: "top-center",
+      autoClose: 3000,
+    })
+  }, []);
   return (
     <div
       style={{
@@ -26,7 +35,8 @@ const ThreeCuboidsA = () => {
        
       />
 
-      <Footercomp footheight="15%" instruction={Instru.default()} />
+      <Footercomp footheight="15%" instruction={Instru.Instruction_2()} />
+      <ToastContainer/>
     </div>
   )
 }

@@ -37,7 +37,7 @@ const FbxDemoMidContent = () => {
   function fbinit() {
     scene = new THREE.Scene();
     const light = new THREE.PointLight()
-    light.position.set(1.0, 1.4, 1.0)
+    light.position.set(100, 140, 100)
     scene.add(light)
     const ambientLight = new THREE.AmbientLight()
     scene.add(ambientLight)
@@ -54,7 +54,8 @@ const FbxDemoMidContent = () => {
     renderer = new THREE.WebGLRenderer()
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setSize(1100, 420);
-    renderer.setClearColor(0xeeeeee, 1);
+    renderer.setClearColor(0xffffff, 0);
+    // renderer.setClearColor(0xeeeeee, 1);
     container.appendChild(renderer.domElement);
 
     controls = new OrbitControls(camera, renderer.domElement)

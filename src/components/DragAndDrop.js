@@ -5,8 +5,11 @@ import DragAndDropMidContent from './DragAndDropMidContent'
 import Headcomp from './MajorComponents/Headcomp'
 import Middlecomp from './MajorComponents/Middlecomp'
 import Footercomp from './MajorComponents/Footercomp';
+import { useState } from 'react';
 
 const DragAndDrop = () => {
+
+  const [changeinstruction, setChangeInstruction] = useState(Instru.Instruction_3());
   return (
     <div
       style={{
@@ -20,12 +23,12 @@ const DragAndDrop = () => {
 
       <Middlecomp
         midheight="75%"
-        midcontent={<DragAndDropMidContent />}
+        midcontent={<DragAndDropMidContent instruction={setChangeInstruction}/>}
         toolvisible="hidden"
        
       />
 
-      <Footercomp footheight="15%" instruction={Instru.default()} />
+      <Footercomp footheight="15%" instruction={changeinstruction} />
     </div>
   )
 }
