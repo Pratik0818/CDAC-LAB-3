@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { DoubleSide } from "three";
 import Line from "./Line.js";
 
-const FinalCube = (props) => {
+const DragAndDropCube = (props) => {
   // User input values
   let firstInput = parseInt(localStorage.getItem("val1"));
 
@@ -27,17 +27,17 @@ const FinalCube = (props) => {
   const cube_cRef = useRef(); // ref for cube C
 
   const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA 
-  const [cubeL, setCubeL] = useState([-2.0, 1.5, 0]); // origine position for cubeL
-  const [cubeM, setCubeM] = useState([0, 3.5, 0]); // origine position for cubeM
-  const [cubeN, setCubeN] = useState([0, 1.5, -2.0]); // origine position for cubeN
-  const [cubeP, setCubeP] = useState([-2.0, 3.5, 0]); // origine position for cubeP
-  const [cubeQ, setCubeQ] = useState([0, 3.5, -2.0]); // origine position for cubeQ
-  const [cubeR, setCubeR] = useState([-2.0, 1.5, -2.0]); // origine position for cubeR
-  const [cubeB, setCubeB] = useState([-2.0, 3.5, -2.0]); // origine position for cubeB
+  const [cubeL, setCubeL] = useState([-5.0, 1.6, 0]); // origine position for cubeL
+  const [cubeM, setCubeM] = useState([0, 5, 0]); // origine position for cubeM
+  const [cubeN, setCubeN] = useState([0, 1.6, -5.0]); // origine position for cubeN
+  const [cubeP, setCubeP] = useState([-5.0, 5.0, 0]); // origine position for cubeP
+  const [cubeQ, setCubeQ] = useState([0, 5.0, -5.0]); // origine position for cubeQ
+  const [cubeR, setCubeR] = useState([-5.0, 1.6, -5.0]); // origine position for cubeR
+  const [cubeB, setCubeB] = useState([-5.0, 5.0, -3.0]); // origine position for cubeB
 
- 
 
-  const { size, viewport } = useThree(); 
+
+  const { size, viewport } = useThree();
   let aspect = size.width / viewport.width;
 
 
@@ -158,25 +158,24 @@ const FinalCube = (props) => {
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 15 : 13]}>
+      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 17 : 15]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(50)}
           maxPolarAngle={angleToRadians(85)}
           enableRotate={!isMoving}
-          enableZoom={false}
 
         />
       </PerspectiveCamera>
 
       {/* Axis helper */}
-      {/* <primitive object={new THREE.AxesHelper(30)} /> */}
+      <primitive object={new THREE.AxesHelper(30)} />
 
       {/* floor */}
-      {/* <mesh receiveShadow rotation={[-angleToRadians(90), 0, 0]}>
+      <mesh receiveShadow rotation={[-angleToRadians(90), 0, 0]}>
         <planeGeometry args={[60, 60]} />
         <meshStandardMaterial color="#5b87a8" side={DoubleSide} />
-      </mesh> */}
+      </mesh>
 
       {/* cube A geometry */}
       <group >
@@ -247,7 +246,13 @@ const FinalCube = (props) => {
       </group>
 
       {/* cuboid L geometry */}
-       <group>
+      {count >= 2 && <group onClick={() => {
+        if ((cubeL[0] !== -2.0) && (cubeL[1] !== 1.5)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeL([-2.0, 1.5, 0]);
+      }}>
 
         <mesh
           castShadow
@@ -311,10 +316,18 @@ const FinalCube = (props) => {
             a
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* cuboid M geometry */}
-       <group >
+      {count >= 0 && <group onClick={() => {
+        if (cubeM[1] !== 3.5) {
+          count = count + 1;
+          setCount(count);
+          console.log("count value", typeof (count), "  ", count);
+
+        }
+        setCubeM([0, 3.5, 0]);
+      }}>
         <mesh
           castShadow
           position={cubeM}
@@ -375,19 +388,32 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* cuboid N geometry */}
-      <group>
+      {count >= 1 && <group onClick={() => {
+        console.log("first count ", count);
+        if ((cubeN[1] !== 1.5) && (cubeN[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+
+        }
+        setCubeN([0, 1.5, -2.0]);
+      }}
+      >
         <mesh
           castShadow
           position={cubeN}
           onPointerOver={(e) => {
-          
+            //console.log("mouse on cube A");
+            // setAngleAzimuthal(0);
+            // setAnglePolar(0);
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-          
+            //console.log("mouse not on cube A");
+            // setAngleAzimuthal(180);
+            // setAnglePolar(70);
             setIsMoving(false);
           }}
         >
@@ -402,7 +428,15 @@ const FinalCube = (props) => {
           >
             Cuboid N
           </Text>
-       
+          {/* {showVolume_A && <Text
+            position={[cubeA[0] - 4, cubeA[1], cubeA[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Volume of cube A = a * a * a = a&#179;
+          </Text>} */}
         </mesh>
 
         <mesh>
@@ -442,10 +476,16 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* cuboid P geometry */}
-      <group>
+      {count >= 4 && <group onClick={() => {
+        if ((cubeP[0] !== -2.0) && (cubeP[1] !== 3.5)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeP([-2.0, 3.5, 0]);
+      }}>
         <mesh
           castShadow
           position={cubeP}
@@ -509,10 +549,16 @@ const FinalCube = (props) => {
             a
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* Cuboid Q geometry */}
-       <group>
+      {count >= 3 && <group onClick={() => {
+        if ((cubeQ[1] !== 3.5) && (cubeQ[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeQ([0, 3.5, -2.0]);
+      }}>
         <mesh
           castShadow
           position={cubeQ}
@@ -576,10 +622,16 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* Cuboid R geometry */}
-    <group >
+      {count >= 5 && <group onClick={() => {
+        if ((cubeR[0] !== -2.0) && (cubeR[1] !== 1.5) && (cubeR[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeR([-2.0, 1.5, -2.0]);
+      }}>
         <mesh
           castShadow
           position={cubeR}
@@ -641,10 +693,16 @@ const FinalCube = (props) => {
             a
           </Text>
         </mesh>
-      </group>
+      </group>}
 
       {/* Cube B geometry*/}
-       <group>
+      {count >= 6 && <group onClick={() => {
+        if ((cubeB[0] !== -2.0) && (cubeB[1] !== 3.5) && (cubeB[2] !== -2.0)) {
+          count = count + 1;
+          setCount(count);
+        }
+        setCubeB([-2.0, 3.5, - 2.0]);
+      }}>
         <mesh
           castShadow
           position={cubeB}
@@ -707,21 +765,21 @@ const FinalCube = (props) => {
             b
           </Text>
         </mesh>
-      </group>
+      </group>}
 
 
       {/* Edges*/}
       {/* Line bottom  */}
-     <Line start={[-2.5, 0, + 1.8]} end={[1.5, 0, + 1.8]}></Line>
+      {count === 7 && <Line start={[-2.5, 0, + 1.8]} end={[1.5, 0, + 1.8]}></Line>}
 
       {/* Right side Line */}
-     <Line start={[1.5, 0, 2.1]} end={[1.5, 0, 1.5]}></Line>
+      {count === 7 && <Line start={[1.5, 0, 2.1]} end={[1.5, 0, 1.5]}></Line>}
 
       {/* Left side Line */}
-     <Line start={[-2.5, 0, 2.1]} end={[-2.5, 0, 1.5]}></Line>
+      {count === 7 && <Line start={[-2.5, 0, 2.1]} end={[-2.5, 0, 1.5]}></Line>}
 
       {/* line Text  */}
-    <Text
+      {count === 7 && <Text
         position={[-0.2, 0.01, 2.2]}
         rotation={[-angleToRadians(90), 0, 0]}
         scale={[3, 3, 3]}
@@ -730,22 +788,22 @@ const FinalCube = (props) => {
         anchorY="middle"
       >
         (a+b)
-      </Text>
+      </Text>}
 
 
       {/******************************************************************************/}
 
       {/* Vertical line left  */}
-     <Line start={[-2.5, 0, 1.8]} end={[-2.5, 4, + 1.8]}></Line>
+      {count === 7 && <Line start={[-2.5, 0, 1.8]} end={[-2.5, 4, + 1.8]}></Line>}
 
       {/* Top side Line */}
-      <Line start={[-2.0, 4, 1.8]} end={[-3.0, 4, 1.8]}></Line>
+      {count === 7 && <Line start={[-2.0, 4, 1.8]} end={[-3.0, 4, 1.8]}></Line>}
 
       {/* bottom side Line */}
-      <Line start={[-2.0, 0, 1.8]} end={[-2.7, 0, 1.8]}></Line>
+      {count === 7 && <Line start={[-2.0, 0, 1.8]} end={[-2.7, 0, 1.8]}></Line>}
 
       {/* line Text  */}
-    <Text
+      {count === 7 && <Text
         position={[-2.9, 2.3, 1.8]}
         // rotation={[0, 0, 0]}
         scale={[3, 3, 3]}
@@ -754,21 +812,21 @@ const FinalCube = (props) => {
         anchorY="middle"
       >
         (a+b)
-      </Text>
+      </Text>}
 
       {/******************************************************************************/}
 
       {/* Horizontal line left  */}
-     <Line start={[-2.8, 0, 1.5]} end={[-2.8, 0, -2.5]}></Line>
+      {count === 7 && <Line start={[-2.8, 0, 1.5]} end={[-2.8, 0, -2.5]}></Line>}
 
       {/* front side Line */}
-      <Line start={[-3.2, 0, 1.5]} end={[-2.5, 0, 1.5]}></Line>
+      {count === 7 && <Line start={[-3.2, 0, 1.5]} end={[-2.5, 0, 1.5]}></Line>}
 
       {/* back side Line */}
-     <Line start={[-3.2, 0, -2.5]} end={[-2.5, 0, -2.5]}></Line>
+      {count === 7 && <Line start={[-3.2, 0, -2.5]} end={[-2.5, 0, -2.5]}></Line>}
 
       {/* line Text  */}
-     <Text
+      {count === 7 && <Text
         position={[-3.1, 0.01, -0.5]}
         rotation={[-angleToRadians(90), 0, -angleToRadians(90)]}
         scale={[3, 3, 3]}
@@ -777,7 +835,7 @@ const FinalCube = (props) => {
         anchorY="middle"
       >
         (a+b)
-      </Text>
+      </Text>}
 
 
 
@@ -796,4 +854,4 @@ const FinalCube = (props) => {
   );
 };
 
-export default FinalCube;
+export default DragAndDropCube;

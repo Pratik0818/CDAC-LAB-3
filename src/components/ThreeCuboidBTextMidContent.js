@@ -16,46 +16,46 @@ const ThreeCuboidBTextMidContent = () => {
     <div style={{ height: "100%" }}>
       <div style={{ height: "90%" }}>
         <div className='d-flex' style={{ height: "70%" }}>
-        <div className='col-4 d-flex justify-content-center align-items-center'>
-        <img
-          className=""
-          style={{
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            maxHeight: "80%",
-            maxWidth: "80%",
-          }}
-          src={cuboidswidthA}
-          alt="img"
-        />
-        </div>
-        <div className='col-4 d-flex justify-content-center align-items-center'>
-        <img
-          className=""
-          style={{
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            maxHeight: "80%",
-            maxWidth: "80%",
-          }}
-          src={cuboidswidthA}
-          alt="img"
-        />
-        </div>
-        <div className='col-4 d-flex justify-content-center align-items-center'>
-        <img
-          className=""
-          style={{
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            maxHeight: "80%",
-            maxWidth: "80%",
-          }}
-          src={cuboidswidthA}
-          alt="img"
-        />
-        </div>
-        
+          <div className='col-4 d-flex justify-content-center align-items-center'>
+            <img
+              className=""
+              style={{
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                maxHeight: "80%",
+                maxWidth: "80%",
+              }}
+              src={cuboidswidthA}
+              alt="img"
+            />
+          </div>
+          <div className='col-4 d-flex justify-content-center align-items-center'>
+            <img
+              className=""
+              style={{
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                maxHeight: "80%",
+                maxWidth: "80%",
+              }}
+              src={cuboidswidthA}
+              alt="img"
+            />
+          </div>
+          <div className='col-4 d-flex justify-content-center align-items-center'>
+            <img
+              className=""
+              style={{
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                maxHeight: "80%",
+                maxWidth: "80%",
+              }}
+              src={cuboidswidthA}
+              alt="img"
+            />
+          </div>
+
         </div>
         <div className='text-center' style={{ height: "30%" }}>
           <div>Three cuboids of dimensions a*b*b is drawn successfully.</div>

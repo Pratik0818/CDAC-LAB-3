@@ -1,12 +1,12 @@
 import React from 'react'
-import Footercomp from './MajorComponents/Footercomp'
 import Headcomp from './MajorComponents/Headcomp'
 import Middlecomp from './MajorComponents/Middlecomp'
-import ThreeCuboidBTextMidContent from './ThreeCuboidBTextMidContent'
 import backgroundImg from "../Img/backg.jpg";
 import * as Instru from "./MajorComponents/Instruction"
+import Footercomp from './MajorComponents/Footercomp';
+import VerificationMidContent from './VerificationMidContent';
 
-const ThreeCuboidBText = () => {
+const Verification = () => {
   return (
     <div
     style={{
@@ -20,14 +20,14 @@ const ThreeCuboidBText = () => {
 
     <Middlecomp
       midheight="70%"
-      midcontent={<ThreeCuboidBTextMidContent />}
+      midcontent={<VerificationMidContent />}
       toolvisible="hidden"
-     
+      
     />
 
-    <Footercomp footheight="20%" instruction={Instru.Instruction_4()} />
+    <Footercomp footheight="20%" instruction={Instru.Instruction_5()} />
   </div>
   )
 }
 
-export default ThreeCuboidBText
+export default Verification

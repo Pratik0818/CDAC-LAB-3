@@ -25,7 +25,7 @@ const ThreeCuboidAText = () => {
         
       />
 
-      <Footercomp footheight="20%" instruction={Instru.default()} />
+      <Footercomp footheight="20%" instruction={Instru.Instruction_4()} />
     </div>
   )
 }

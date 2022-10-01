@@ -53,6 +53,62 @@ const Instruction_5 = () => {
   );
 };
 
+const Instruction_6 = () => {
+  return (
+    <ul>
+     Click on Cuboid M.
+    </ul>
+  );
+};
+
+const Instruction_7 = () => {
+  return (
+    <ul>
+      Click on Cuboid N.
+    </ul>
+  );
+};
+
+const Instruction_8 = () => {
+  return (
+    <ul>
+      Click on Cuboid L.
+    </ul>
+  );
+};
+
+const Instruction_9 = () => {
+  return (
+    <ul>
+      Click on Cuboid Q.
+    </ul>
+  );
+};
+
+const Instruction_10 = () => {
+  return (
+    <ul>
+      Click on Cuboid P.
+    </ul>
+  );
+};
+const Instruction_11 = () => {
+  return (
+    <ul>
+      Click on Cuboid R.
+    </ul>
+  );
+};
+
+const Instruction_12 = () => {
+  return (
+    <ul>
+      Click on Cuboid B.
+    </ul>
+  );
+};
+
+
 
 
 export default expression;
@@ -63,4 +119,11 @@ export {
   Instruction_3,
   Instruction_4,
   Instruction_5,
+  Instruction_6,
+  Instruction_7,
+  Instruction_8,
+  Instruction_9,
+  Instruction_10,
+  Instruction_11,
+  Instruction_12,
 };

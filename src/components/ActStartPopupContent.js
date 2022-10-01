@@ -5,37 +5,15 @@ import { ListItemText } from "@mui/material";
 const ActStartPopupContent = () => {
   return (
     <>
-      <ListItemText sx={{ display: "list-item" }}>We are going to learn subtraction of fractions having unlike denominators.
-        To calculate the subtraction, following steps needs to be done:</ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>We are going to practically verify the algebric identity (a+b)³ = a³ + b³ + 3 * a² * b + 3 * a * b².
+       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-        First student will be taking numerator (a) , denominator(b) for fraction-I and numerator (c) , denominator(d) for fraction-II.
-      </ListItemText>
-      <ListItemText sx={{ display: "list-item" }}>
-        Denominator of both the fractions is multiplied (b*d) and resultant of the multiplication will form the number of the cells of the grid.
+        We are going to take RHS as fragments of values of cubes (a³,b³) and cuboids (3a²b,3ab²) where a is greater than b.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-        Then, student will mark the number of cells with red sketch pen up to the resultant of the cross multiplication of a*d.
+       Then we are going to combine all these fragments of RHS to make another cube of side (a+b) and volume (a+b)³ which will depict our LHS.
       </ListItemText>
-      <ListItemText sx={{ display: "list-item" }}>
-        Then, student will mark the number of cells with blue sketch pen up to the resultant of the cross multiplication of c*b.
-      </ListItemText>
-      <ListItemText >
-        <img
-          className="img-fluid"
-          style={{
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            maxHeight: "100%",
-            maxWidth: "100%",
-
-          }}
-         // src={crossmulti}
-          alt="img"
-        />
-      </ListItemText>
-      <ListItemText sx={{ display: 'list-item' }}>
-        Student will be able to derive conclusions from the resultant grid that is combination of first two grid.
-      </ListItemText>
+     
 
     </>
   );
