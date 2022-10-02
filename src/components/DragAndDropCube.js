@@ -158,7 +158,7 @@ const DragAndDropCube = (props) => {
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 17 : 15]}>
+      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 16 : 14]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(50)}
@@ -250,19 +250,20 @@ const DragAndDropCube = (props) => {
         if ((cubeL[0] !== -2.0) && (cubeL[1] !== 1.5)) {
           count = count + 1;
           setCount(count);
+          setCubeL([-2.0, 1.5, 0]);
         }
-        setCubeL([-2.0, 1.5, 0]);
+
       }}>
 
         <mesh
           castShadow
           position={cubeL}
           onPointerOver={(e) => {
-         
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-          
+
             setIsMoving(false);
           }}
         >
@@ -323,19 +324,19 @@ const DragAndDropCube = (props) => {
         if (cubeM[1] !== 3.5) {
           count = count + 1;
           setCount(count);
-          console.log("count value", typeof (count), "  ", count);
+          setCubeM([0, 3.5, 0]);
 
         }
-        setCubeM([0, 3.5, 0]);
+
       }}>
         <mesh
           castShadow
           position={cubeM}
           onPointerOver={(e) => {
-                        setIsMoving(true);
+            setIsMoving(true);
           }}
           onPointerOut={(e) => {
-                      setIsMoving(false);
+            setIsMoving(false);
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
@@ -396,9 +397,10 @@ const DragAndDropCube = (props) => {
         if ((cubeN[1] !== 1.5) && (cubeN[2] !== -2.0)) {
           count = count + 1;
           setCount(count);
+          setCubeN([0, 1.5, -2.0]);
 
         }
-        setCubeN([0, 1.5, -2.0]);
+
       }}
       >
         <mesh
@@ -483,18 +485,19 @@ const DragAndDropCube = (props) => {
         if ((cubeP[0] !== -2.0) && (cubeP[1] !== 3.5)) {
           count = count + 1;
           setCount(count);
+          setCubeP([-2.0, 3.5, 0]);
         }
-        setCubeP([-2.0, 3.5, 0]);
+        
       }}>
         <mesh
           castShadow
           position={cubeP}
           onPointerOver={(e) => {
-            
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-            
+
             setIsMoving(false);
           }}
         >
@@ -509,7 +512,7 @@ const DragAndDropCube = (props) => {
           >
             Cuboid P
           </Text>
-         
+
         </mesh>
 
         <mesh>
@@ -556,18 +559,19 @@ const DragAndDropCube = (props) => {
         if ((cubeQ[1] !== 3.5) && (cubeQ[2] !== -2.0)) {
           count = count + 1;
           setCount(count);
+          setCubeQ([0, 3.5, -2.0]);
         }
-        setCubeQ([0, 3.5, -2.0]);
+        
       }}>
         <mesh
           castShadow
           position={cubeQ}
           onPointerOver={(e) => {
-           
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-         
+
             setIsMoving(false);
           }}
         >
@@ -582,7 +586,7 @@ const DragAndDropCube = (props) => {
           >
             Cuboid Q
           </Text>
-        
+
         </mesh>
 
         <mesh>
@@ -628,18 +632,19 @@ const DragAndDropCube = (props) => {
       {count >= 5 && <group onClick={() => {
         if ((cubeR[0] !== -2.0) && (cubeR[1] !== 1.5) && (cubeR[2] !== -2.0)) {
           count = count + 1;
-          setCount(count);
+          setCount(count); 
+          setCubeR([-2.0, 1.5, -2.0]);
         }
-        setCubeR([-2.0, 1.5, -2.0]);
+       
       }}>
         <mesh
           castShadow
           position={cubeR}
           onPointerOver={(e) => {
-                       setIsMoving(true);
+            setIsMoving(true);
           }}
           onPointerOut={(e) => {
-                       setIsMoving(false);
+            setIsMoving(false);
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
@@ -653,7 +658,7 @@ const DragAndDropCube = (props) => {
           >
             Cuboid R
           </Text>
-        
+
         </mesh>
 
         <mesh>
@@ -699,9 +704,10 @@ const DragAndDropCube = (props) => {
       {count >= 6 && <group onClick={() => {
         if ((cubeB[0] !== -2.0) && (cubeB[1] !== 3.5) && (cubeB[2] !== -2.0)) {
           count = count + 1;
-          setCount(count);
+          setCount(count); 
+          setCubeB([-2.0, 3.5, - 2.0]);
         }
-        setCubeB([-2.0, 3.5, - 2.0]);
+       
       }}>
         <mesh
           castShadow

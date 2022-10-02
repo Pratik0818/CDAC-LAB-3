@@ -11,14 +11,14 @@ const expression = () => {
 
 const Instruction_1 = () => {
   return <ul>
-     Enter value into their respective boxes and click on <b>DRAW CUBE</b> button.
+    Enter value into their respective boxes and click on <b>DRAW CUBE</b> button.
   </ul>;
 };
 
 const Instruction_2 = () => {
   return (
     <ul>
-      Enter value into their respective boxes. 
+      Enter value into their respective boxes.
     </ul>
   );
 };
@@ -29,26 +29,20 @@ const Instruction_3 = () => {
 };
 
 const Instruction_4 = () => {
-
   return (
     <ul>
-
       <ul>
-
         Click on <b>Next</b> button.
-
       </ul>
     </ul>
   );
 };
 
 const Instruction_5 = () => {
-
-
   return (
     <ul>
-
-      Activity successfully completed click on RESTART Button.
+      <li>Enter value of a and b and see the result.</li>
+      <li>Activity successfully completed click on RESTART Button.</li>
     </ul>
   );
 };
@@ -56,7 +50,7 @@ const Instruction_5 = () => {
 const Instruction_6 = () => {
   return (
     <ul>
-     Click on Cuboid M.
+      Click on Cuboid M.
     </ul>
   );
 };

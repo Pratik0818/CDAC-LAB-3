@@ -19,13 +19,13 @@ const Observation = () => {
         <Headcomp />
     
         <Middlecomp
-          midheight="70%"
+          midheight="75%"
           midcontent={<ObservationMidContent />}
           toolvisible="hidden"
           
         />
     
-        <Footercomp footheight="20%" instruction={Instru.Instruction_5()} />
+        <Footercomp footheight="15%" instruction={Instru.Instruction_4()} />
       </div>
       )
 }

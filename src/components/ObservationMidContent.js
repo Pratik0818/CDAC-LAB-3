@@ -16,30 +16,34 @@ const ObservationMidContent = () => {
     }
 
     const onNext = () => {
-        navigate("/letusverify/observation");
+        navigate("/letusverify/verification");
     }
 
     return (
         <div style={{ height: "100%" }}>
             <div className='d-flex' style={{ height: "80%", width: '100%' }}>
-                <div className='col-6'>
+               
                     <Canvas shadows camera={{ position: [-3, 2, 5], fov: 40 }} >
                         <Suspense fallback={null}>
                             <FinalCube func={pull_data} />
                         </Suspense>
-                    </Canvas></div>
-                <div className='col-6'>
+                    </Canvas>
+                {/* <div className='col-6'>
                     <Canvas shadows camera={{ position: [-3, 2, 5], fov: 40 }} >
                         <Suspense fallback={null}>
                             <FinalCube func={pull_data} />
                         </Suspense>
-                    </Canvas></div>
+                    </Canvas></div> */}
             </div>
-            <div style={{ height: "10%", width: '100%' }}>2</div>
+            <div className='text-center fw-bold' style={{ height: "10%", width: '100%' }}>
+                <label>Obsevation : Here we combine the RHS part it will form a cube whose volume = (a+b)³ which is LHS </label>
+                <br/>
+                <label>Therfore, LHS=RHS</label>
+            </div>
             <BackNextBar
                 setForward={onNext}
                 backvisible="visible"
-                nextvisible={count === 7 ? "visible" : "hidden"}
+                nextvisible="visible"
                 submitvisible="hidden"
 
             />

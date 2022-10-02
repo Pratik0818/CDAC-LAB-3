@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -7,42 +7,43 @@ import DragAndDropCube from './DragAndDropCube'
 import BackNextBar from './MajorComponents/BackNextBar'
 import * as Instru from "./MajorComponents/Instruction"
 
-const DragAndDropMidContent = ({instruction}) => {
+const DragAndDropMidContent = ({ instruction }) => {
     const navigate = useNavigate();
     const [count, setCount] = useState(0);
+    const [height, setHeight] = useState("90%");
 
-    const pull_data = (data) => {
-        setCount(data); 
-        if(count === 0)
-        {
-            instruction(Instru.Instruction_6());
-        }
-        if(count === 1)
-        {
-            instruction(Instru.Instruction_7());
-        }
-        if(count === 2)
-        {
-            instruction(Instru.Instruction_8());
-        }
-        if(count === 3)
-        {
-            instruction(Instru.Instruction_9());
-        }
-        if(count === 4)
-        {
-            instruction(Instru.Instruction_10());
-        }
-        if(count === 5)
-        {
-            instruction(Instru.Instruction_11());
-        }
-        if(count === 6)
-        {
-            instruction(Instru.Instruction_12());
-        }
+    useEffect(()=>{
         if(count === 7)
         {
+            setHeight("75%")
+        }
+        
+    })
+
+    const pull_data = (data) => {
+        setCount(data);
+        if (count === 0) {
+            instruction(Instru.Instruction_6());
+        }
+        if (count === 1) {
+            instruction(Instru.Instruction_7());
+        }
+        if (count === 2) {
+            instruction(Instru.Instruction_8());
+        }
+        if (count === 3) {
+            instruction(Instru.Instruction_9());
+        }
+        if (count === 4) {
+            instruction(Instru.Instruction_10());
+        }
+        if (count === 5) {
+            instruction(Instru.Instruction_11());
+        }
+        if (count === 6) {
+            instruction(Instru.Instruction_12());
+        }
+        if (count === 7) {
             instruction(Instru.Instruction_4());
         }
     }
@@ -56,14 +57,24 @@ const DragAndDropMidContent = ({instruction}) => {
 
     return (
         <div style={{ height: "100%" }}>
-            <div style={{ height: "80%", width: '100%' }}>
+            <div className='d-flex' style={{  height:height, width: '100%' }}>
+
                 <Canvas shadows camera={{ position: [-3, 2, 5], fov: 40 }} >
                     <Suspense fallback={null}>
-                        <DragAndDropCube func={pull_data}/>
+                        <DragAndDropCube func={pull_data} />
                     </Suspense>
                 </Canvas>
+
+
             </div>
-           <div style={{ height: "10%", width: '100%' }}>2</div>
+            {count === 7 && <div className='text-center fw-bold' style={{ height: "15%", width: '100%' }}>
+                <label>Here cube is formed having length=(a+b), width=(a+b), height=(a+b)
+                </label>
+                <br />
+                <label>So, Volume of cube = length * width * height = (a+b) * (a+b) * (a+b)</label>
+                <br />
+                <label className=''> = (a+b)³ Which is LHS </label>
+            </div>}
             <BackNextBar
                 setForward={onNext}
                 clickSubmit={submitoperation}

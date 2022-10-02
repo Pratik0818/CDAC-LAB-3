@@ -7,6 +7,7 @@ import { useDrag } from "@use-gesture/react";
 import * as THREE from "three";
 import { DoubleSide } from "three";
 import Line from "./Line.js";
+import { Instruction_5 } from "./MajorComponents/Instruction.js";
 
 const FinalCube = (props) => {
   // User input values
@@ -26,18 +27,27 @@ const FinalCube = (props) => {
   const cube_bRef = useRef(); // ref for cube B
   const cube_cRef = useRef(); // ref for cube C
 
-  const [cubeA, setCubeA] = useState([0, 1.5, 0]); // origine position for cubeA 
-  const [cubeL, setCubeL] = useState([-2.0, 1.5, 0]); // origine position for cubeL
-  const [cubeM, setCubeM] = useState([0, 3.5, 0]); // origine position for cubeM
-  const [cubeN, setCubeN] = useState([0, 1.5, -2.0]); // origine position for cubeN
-  const [cubeP, setCubeP] = useState([-2.0, 3.5, 0]); // origine position for cubeP
-  const [cubeQ, setCubeQ] = useState([0, 3.5, -2.0]); // origine position for cubeQ
-  const [cubeR, setCubeR] = useState([-2.0, 1.5, -2.0]); // origine position for cubeR
-  const [cubeB, setCubeB] = useState([-2.0, 3.5, -2.0]); // origine position for cubeB
+  const [cubeA, setCubeA] = useState([-5, 1.5, 0]); // origine position for cubeA 
+  const [cubeL, setCubeL] = useState([-7.0, 1.5, 0]); // origine position for cubeL
+  const [cubeM, setCubeM] = useState([-5, 3.5, 0]); // origine position for cubeM
+  const [cubeN, setCubeN] = useState([-5, 1.5, -2.0]); // origine position for cubeN
+  const [cubeP, setCubeP] = useState([-7.0, 3.5, 0]); // origine position for cubeP
+  const [cubeQ, setCubeQ] = useState([-5, 3.5, -2.0]); // origine position for cubeQ
+  const [cubeR, setCubeR] = useState([-7.0, 1.5, -2.0]); // origine position for cubeR
+  const [cubeB, setCubeB] = useState([-7.0, 3.5, -2.0]); // origine position for cubeB
 
- 
+  const [cubeA1, setCubeA1] = useState([5.0, 1.5, 0]); // origine position for cubeA 
+  const [cubeL1, setCubeL1] = useState([9, 1.6, 0]); // origine position for cubeL
+  const [cubeM1, setCubeM1] = useState([5, 5, 0]); // origine position for cubeM
+  const [cubeN1, setCubeN1] = useState([5, 1.6, -5.0]); // origine position for cubeN
+  const [cubeP1, setCubeP1] = useState([9, 5.0, 0]); // origine position for cubeP
+  const [cubeQ1, setCubeQ1] = useState([5, 5.0, -5.0]); // origine position for cubeQ
+  const [cubeR1, setCubeR1] = useState([9, 1.6, -5.0]); // origine position for cubeR
+  const [cubeB1, setCubeB1] = useState([9, 5.0, -3.0]); // origine position for cubeB
 
-  const { size, viewport } = useThree(); 
+
+
+  const { size, viewport } = useThree();
   let aspect = size.width / viewport.width;
 
 
@@ -158,7 +168,7 @@ const FinalCube = (props) => {
 
       {/* Camera perspective */}
 
-      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 15 : 13]}>
+      <PerspectiveCamera makeDefault position={[0, 2, firstInput === 3 ? 17 : 15]}>
         <OrbitControls
           ref={orbitControlsRef}
           minPolarAngle={angleToRadians(50)}
@@ -170,13 +180,13 @@ const FinalCube = (props) => {
       </PerspectiveCamera>
 
       {/* Axis helper */}
-      {/* <primitive object={new THREE.AxesHelper(30)} /> */}
+      <primitive object={new THREE.AxesHelper(30)} />
 
       {/* floor */}
-      {/* <mesh receiveShadow rotation={[-angleToRadians(90), 0, 0]}>
+      <mesh receiveShadow rotation={[-angleToRadians(90), 0, 0]}>
         <planeGeometry args={[60, 60]} />
         <meshStandardMaterial color="#5b87a8" side={DoubleSide} />
-      </mesh> */}
+      </mesh>
 
       {/* cube A geometry */}
       <group >
@@ -247,17 +257,17 @@ const FinalCube = (props) => {
       </group>
 
       {/* cuboid L geometry */}
-       <group>
+      <group>
 
         <mesh
           castShadow
           position={cubeL}
           onPointerOver={(e) => {
-         
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-          
+
             setIsMoving(false);
           }}
         >
@@ -314,15 +324,15 @@ const FinalCube = (props) => {
       </group>
 
       {/* cuboid M geometry */}
-       <group >
+      <group >
         <mesh
           castShadow
           position={cubeM}
           onPointerOver={(e) => {
-                        setIsMoving(true);
+            setIsMoving(true);
           }}
           onPointerOut={(e) => {
-                      setIsMoving(false);
+            setIsMoving(false);
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
@@ -383,11 +393,11 @@ const FinalCube = (props) => {
           castShadow
           position={cubeN}
           onPointerOver={(e) => {
-          
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-          
+
             setIsMoving(false);
           }}
         >
@@ -402,7 +412,7 @@ const FinalCube = (props) => {
           >
             Cuboid N
           </Text>
-       
+
         </mesh>
 
         <mesh>
@@ -450,11 +460,11 @@ const FinalCube = (props) => {
           castShadow
           position={cubeP}
           onPointerOver={(e) => {
-            
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-            
+
             setIsMoving(false);
           }}
         >
@@ -469,7 +479,7 @@ const FinalCube = (props) => {
           >
             Cuboid P
           </Text>
-         
+
         </mesh>
 
         <mesh>
@@ -512,16 +522,16 @@ const FinalCube = (props) => {
       </group>
 
       {/* Cuboid Q geometry */}
-       <group>
+      <group>
         <mesh
           castShadow
           position={cubeQ}
           onPointerOver={(e) => {
-           
+
             setIsMoving(true);
           }}
           onPointerOut={(e) => {
-         
+
             setIsMoving(false);
           }}
         >
@@ -536,7 +546,7 @@ const FinalCube = (props) => {
           >
             Cuboid Q
           </Text>
-        
+
         </mesh>
 
         <mesh>
@@ -579,15 +589,15 @@ const FinalCube = (props) => {
       </group>
 
       {/* Cuboid R geometry */}
-    <group >
+      <group >
         <mesh
           castShadow
           position={cubeR}
           onPointerOver={(e) => {
-                       setIsMoving(true);
+            setIsMoving(true);
           }}
           onPointerOut={(e) => {
-                       setIsMoving(false);
+            setIsMoving(false);
           }}
         >
           {/* <sphereGeometry args={[1, 32, 32]} /> */}
@@ -601,7 +611,7 @@ const FinalCube = (props) => {
           >
             Cuboid R
           </Text>
-        
+
         </mesh>
 
         <mesh>
@@ -644,7 +654,7 @@ const FinalCube = (props) => {
       </group>
 
       {/* Cube B geometry*/}
-       <group>
+      <group>
         <mesh
           castShadow
           position={cubeB}
@@ -712,17 +722,17 @@ const FinalCube = (props) => {
 
       {/* Edges*/}
       {/* Line bottom  */}
-     <Line start={[-2.5, 0, + 1.8]} end={[1.5, 0, + 1.8]}></Line>
+      <Line start={[-7.5, 0, + 1.8]} end={[-3.5, 0, + 1.8]}></Line>
 
       {/* Right side Line */}
-     <Line start={[1.5, 0, 2.1]} end={[1.5, 0, 1.5]}></Line>
+      <Line start={[-3.5, 0, 2.1]} end={[-3.5, 0, 1.5]}></Line>
 
       {/* Left side Line */}
-     <Line start={[-2.5, 0, 2.1]} end={[-2.5, 0, 1.5]}></Line>
+      <Line start={[-7.5, 0, 2.1]} end={[-7.5, 0, 1.5]}></Line>
 
       {/* line Text  */}
-    <Text
-        position={[-0.2, 0.01, 2.2]}
+      <Text
+        position={[-5.5, 0.01, 2.2]}
         rotation={[-angleToRadians(90), 0, 0]}
         scale={[3, 3, 3]}
         color="black"
@@ -736,17 +746,17 @@ const FinalCube = (props) => {
       {/******************************************************************************/}
 
       {/* Vertical line left  */}
-     <Line start={[-2.5, 0, 1.8]} end={[-2.5, 4, + 1.8]}></Line>
+      <Line start={[-7.5, 0, 1.8]} end={[-7.5, 4, + 1.8]}></Line>
 
       {/* Top side Line */}
-      <Line start={[-2.0, 4, 1.8]} end={[-3.0, 4, 1.8]}></Line>
+      <Line start={[-7.8, 4, 1.8]} end={[-7.2, 4, 1.8]}></Line>
 
       {/* bottom side Line */}
-      <Line start={[-2.0, 0, 1.8]} end={[-2.7, 0, 1.8]}></Line>
+      <Line start={[-7.8, 0, 1.8]} end={[-7.2, 0, 1.8]}></Line>
 
       {/* line Text  */}
-    <Text
-        position={[-2.9, 2.3, 1.8]}
+      <Text
+        position={[-7.9, 2.3, 1.8]}
         // rotation={[0, 0, 0]}
         scale={[3, 3, 3]}
         color="black"
@@ -759,17 +769,17 @@ const FinalCube = (props) => {
       {/******************************************************************************/}
 
       {/* Horizontal line left  */}
-     <Line start={[-2.8, 0, 1.5]} end={[-2.8, 0, -2.5]}></Line>
+      <Line start={[-7.8, 0, 1.5]} end={[-7.8, 0, -2.5]}></Line>
 
       {/* front side Line */}
-      <Line start={[-3.2, 0, 1.5]} end={[-2.5, 0, 1.5]}></Line>
+      <Line start={[-8.1, 0, 1.5]} end={[-7.5, 0, 1.5]}></Line>
 
       {/* back side Line */}
-     <Line start={[-3.2, 0, -2.5]} end={[-2.5, 0, -2.5]}></Line>
+      <Line start={[-8.1, 0, -2.5]} end={[-7.5, 0, -2.5]}></Line>
 
       {/* line Text  */}
-     <Text
-        position={[-3.1, 0.01, -0.5]}
+      <Text
+        position={[-8.1, 0.01, -0.5]}
         rotation={[-angleToRadians(90), 0, -angleToRadians(90)]}
         scale={[3, 3, 3]}
         color="black"
@@ -779,7 +789,558 @@ const FinalCube = (props) => {
         (a+b)
       </Text>
 
+      {/* cube A1 geometry */}
+      <group >
+        <mesh
+          castShadow
+          position={cubeA1}
+          onPointerOver={(e) => {
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
 
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[3, 3, 3]} />
+          <meshStandardMaterial color="#FF1493" opacity={0.7} transparent />
+          <Text
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cube A
+          </Text>
+
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeA1[0], cubeA1[1] - 1.4, cubeA1[2] + 1.6]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeA1[0] + 1.6, cubeA1[1], cubeA1[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeA[0] - 1.6, cubeA[1] + 1.6, cubeA[2]]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+
+
+      </group>
+
+      {/* cuboid L1 geometry */}
+      <group >
+
+        <mesh
+          castShadow
+          position={cubeL1}
+          onPointerOver={(e) => {
+
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[1, 3, 3]} />
+          <meshStandardMaterial color="#008000" opacity={0.7} transparent />
+          <Text
+            scale={[2.5, 2.5, 2.5]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cuboid L
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeL1[0], cubeL1[1] - 1.4, cubeL1[2] + 1.6]}
+            scale={[3, 3, 1]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeL1[0] - 0.6, cubeL1[1], cubeL1[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeL1[0] - 0.6, cubeL1[1] + 1.6, cubeL1[2]]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+      </group>
+
+      {/* cuboid M1 geometry */}
+      <group>
+        <mesh
+          castShadow
+          position={cubeM1}
+          onPointerOver={(e) => {
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[3, 1, 3]} />
+          <meshStandardMaterial color="#008000" opacity={0.7} transparent />
+          <Text
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cuboid M
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeM1[0] + 1.6, cubeM1[1] + 0.5, cubeM1[2]]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeM1[0], cubeM1[1] + 0.6, cubeM1[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+        <mesh>
+          {/*  left side notation */}
+          <Text
+            position={[cubeM1[0] + 1.5, cubeM1[1], cubeM1[2] + 1.6]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+      </group>
+
+      {/* cuboid N1 geometry */}
+      <group>
+        <mesh
+          castShadow
+          position={cubeN1}
+          onPointerOver={(e) => {
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[3, 3, 1]} />
+          <meshStandardMaterial color="#008000" opacity={0.7} transparent />
+          <Text
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cuboid N
+          </Text>
+
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeN1[0], cubeN1[1] + 1.6, cubeN1[2] + 0.5]}
+            scale={[3, 3, 1]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeN1[0] - 1.6, cubeN1[1], cubeN1[2] + 0.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeN1[0] - 1.6, cubeN1[1] + 1.6, cubeN1[2]]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+      </group>
+
+      {/* cuboid P1 geometry */}
+      <group>
+        <mesh
+          castShadow
+          position={cubeP1}
+          onPointerOver={(e) => {
+
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[1, 1, 3]} />
+          <meshStandardMaterial color="#B22222" opacity={0.7} transparent />
+          <Text
+            scale={[2.5, 2.5, 2.5]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cuboid P
+          </Text>
+
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeP1[0], cubeP1[1] + 0.6, cubeP1[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeP1[0] - 0.6, cubeP1[1], cubeP1[2] + 1.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeP1[0] - 0.6, cubeP1[1] + 0.6, cubeP1[2] + 0.1]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+      </group>
+
+      {/* Cuboid Q1 geometry */}
+      <group>
+        <mesh
+          castShadow
+          position={cubeQ1}
+          onPointerOver={(e) => {
+
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[3, 1, 1]} />
+          <meshStandardMaterial color="#B22222" opacity={0.7} transparent />
+          <Text
+            scale={[2.5, 2.5, 2.5]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cuboid Q
+          </Text>
+
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeQ1[0], cubeQ1[1] + 0.6, cubeQ1[2] + 0.6]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeQ1[0] + 1.6, cubeQ1[1], cubeQ1[2] + 0.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeQ1[0] + 1.6, cubeQ1[1] + 0.6, cubeQ1[2] + 0.1]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+      </group>
+
+      {/* Cuboid R1 geometry */}
+      <group>
+        <mesh
+          castShadow
+          position={cubeR1}
+          onPointerOver={(e) => {
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[1, 3, 1]} />
+          <meshStandardMaterial color="#B22222" opacity={0.7} transparent />
+          <Text
+            scale={[2.5, 2.5, 2.5]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cuboid R
+          </Text>
+
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeR1[0], cubeR1[1] + 1.6, cubeR1[2] + 0.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* left side notation */}
+          <Text
+            position={[cubeR1[0] - 0.6, cubeR1[1] + 1.5, cubeR1[2]]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+        <mesh>
+          {/* top left side notation */}
+          <Text
+            position={[cubeR1[0] - 0.6, cubeR1[1] + 0.1, cubeR1[2] + 0.5]}
+            scale={[3, 3, 3]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            a
+          </Text>
+        </mesh>
+      </group>
+
+      {/* Cube B1 geometry*/}
+      <group>
+        <mesh
+          castShadow
+          position={cubeB1}
+          onPointerOver={(e) => {
+            setIsMoving(true);
+          }}
+          onPointerOut={(e) => {
+            setIsMoving(false);
+          }}
+        >
+          {/* <sphereGeometry args={[1, 32, 32]} /> */}
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="#155fe8" opacity={0.7} transparent />
+          <Text
+
+            scale={[2, 2, 2]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            Cube B
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* top side notation */}
+          <Text
+            position={[cubeB1[0], cubeB1[1] + 0.6, cubeB1[2] + 0.5]}
+            scale={[2, 2, 2]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* top right side notation */}
+          <Text
+            position={[cubeB1[0] + 0.57, cubeB1[1] + 0.5, cubeB1[2]]}
+            scale={[2, 2, 2]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+
+        <mesh>
+          {/* right side notation */}
+          <Text
+            position={[cubeB1[0] + 0.57, cubeB1[1], cubeB1[2] + 0.5]}
+            scale={[2, 2, 2]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+          >
+            b
+          </Text>
+        </mesh>
+      </group>
+
+ {/* LHS Text  */}
+ <Text
+        position={[-5.5, 0.5, 3.0]}
+        //rotation={[-angleToRadians(90), 0, -angleToRadians(90)]}
+        scale={[4.5, 4.5, 4.5]}
+        color="black"
+        anchorX="center"
+        anchorY="middle"
+      >
+        LHS
+      </Text>
+
+      {/* RHS Text  */}
+ <Text
+        position={[5, 0.5, 3.0]}
+        //rotation={[-angleToRadians(90), 0, -angleToRadians(90)]}
+        scale={[4.5, 4.5, 4.5]}
+        color="black"
+        anchorX="center"
+        anchorY="middle"
+      >
+        RHS
+      </Text>
 
       {/* ambient light */}
       <ambientLight args={["#ffffff", 1]} />
