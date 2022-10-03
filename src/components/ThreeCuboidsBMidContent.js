@@ -6,8 +6,9 @@ import { Canvas } from 'react-three-fiber'
 import { toast } from 'react-toastify'
 import CuboidsB from './CuboidsB'
 import BackNextBar from './MajorComponents/BackNextBar'
+import * as Instru from "./MajorComponents/Instruction"
 
-const ThreeCuboidsBMidContent = () => {
+const ThreeCuboidsBMidContent = ({instruction}) => {
 
   // User input values
   let cubeA = parseInt(localStorage.getItem("val1"));
@@ -19,6 +20,13 @@ const ThreeCuboidsBMidContent = () => {
   const [disabled1, setDisabled1] = useState(true);
   const [firstInputValue, setFirstInputValue] = useState(0);
   const [secondInputValue, setSecondInputValue] = useState(0);
+
+  useEffect(()=>{
+    if(!disabled && !disabled1)
+    {
+        instruction(Instru.Instruction_4());
+    }
+ })
 
   useEffect(() => {
     if (cubeA === 3 && cubeB === 1) {
@@ -99,12 +107,12 @@ const ThreeCuboidsBMidContent = () => {
       </div>
       <div className='d-flex fw-bold' style={{ height: "10%" }}>
         <div className='my-1 col-6 text-center'><label style={{ fontSize: "1.2vw" }}>
-          Volume of each cuboids ab² i.e {firstInputValue} * {secondInputValue}² =
+          Volume of each cuboid ab² i.e {firstInputValue} * {secondInputValue}² =
           <input
             disabled={disabled ? false : true}
             id="first"
             type="number"
-            onBlur={inputValues}
+            onChange={inputValues}
             style={{ width: "20%" }}
             required
           ></input> </label></div>
@@ -114,7 +122,7 @@ const ThreeCuboidsBMidContent = () => {
             disabled={disabled1 ? false : true}
             id="first"
             type="number"
-            onBlur={inputValuesTwo}
+            onChange={inputValuesTwo}
             style={{ width: "20%" }}
             required
           ></input> </label></div>

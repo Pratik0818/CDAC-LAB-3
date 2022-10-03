@@ -57,7 +57,7 @@ const Launchpage = () => {
             className="fw-normal d-flex justify-content-center align-items-center flex-column"
             style={{ height: "22vh", fontSize: "1.5vw" }}
           >
-            <div className="text-center">
+            <div className="">
             1.Student will be able to calculate the cube of a number by expressing it as the sum of two convenient numbers.  
               2. Student will be able to simplify and factorise of  algebraic expressions.<br/> 
               3. Student can learn the concept of verifying the identity geometrically by adding volume of cubes and cuboids.

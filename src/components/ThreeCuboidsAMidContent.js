@@ -8,8 +8,10 @@ import { Canvas } from 'react-three-fiber'
 import { toast } from 'react-toastify'
 import CuboidsA from './CuboidsA'
 import BackNextBar from './MajorComponents/BackNextBar'
+import * as Instru from "./MajorComponents/Instruction"
 
-const ThreeCuboidsAMidContent = () => {
+
+const ThreeCuboidsAMidContent = ({instruction}) => {
 
     let {firstStore } = useSelector((globalState) => globalState);
   
@@ -23,6 +25,12 @@ const ThreeCuboidsAMidContent = () => {
     let cubeB = parseInt(localStorage.getItem("val2"));
     const [firstInputValue, setFirstInputValue] = useState(0);
     const [secondInputValue, setSecondInputValue] = useState(0);
+    useEffect(()=>{
+        if(!disabled && !disabled1)
+        {
+            instruction(Instru.Instruction_4());
+        }
+     })
 
     useEffect(()=>{
         console.log("firststore ", firstStore.firstInputValue1);
@@ -108,12 +116,12 @@ const ThreeCuboidsAMidContent = () => {
             </div>
             <div className='d-flex fw-bold' style={{ height: "10%" }}>
                 <div className='my-1 col-6 text-center'><label style={{ fontSize: "1.2vw" }}>
-                    Volume of each cuboids a²b i.e {firstInputValue}² * {secondInputValue} =
+                    Volume of each cuboid a²b i.e {firstInputValue}² * {secondInputValue} =
                     <input
                          disabled={disabled ? false : true}
                         id="first"
                         type="number"
-                        onBlur={inputValues}
+                        onChange={inputValues}
                         style={{ width: "20%" }}
                         required
                     ></input> </label></div>
@@ -123,7 +131,7 @@ const ThreeCuboidsAMidContent = () => {
                         disabled={disabled1  ? false : true}
                         id="first"
                         type="number"
-                        onBlur={inputValuesTwo}
+                        onChange={inputValuesTwo}
                         style={{ width: "20%" }}
                         required
                     ></input> </label></div>

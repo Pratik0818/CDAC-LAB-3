@@ -16,7 +16,7 @@ const TwoCubes = () => {
     const [changeInstruction, setChangeInstruction] = useState(Instru.Instruction_2());
  
     useEffect(() => {
-    toast.success("Cube of side a and Cube of side b is drawn successfully ", {
+    toast.success("Cube A of side a and Cube B of side b is drawn successfully ", {
       position: "top-center",
       autoClose: 3000,
     })

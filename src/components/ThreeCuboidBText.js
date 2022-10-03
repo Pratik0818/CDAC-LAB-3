@@ -5,8 +5,11 @@ import Middlecomp from './MajorComponents/Middlecomp'
 import ThreeCuboidBTextMidContent from './ThreeCuboidBTextMidContent'
 import backgroundImg from "../Img/backg.jpg";
 import * as Instru from "./MajorComponents/Instruction"
+import { ToastContainer } from 'react-toastify'
+import { useState } from 'react'
 
 const ThreeCuboidBText = () => {
+  let [changeInstruction, setChangeInstruction] = useState(Instru.Instruction_2());
   return (
     <div
     style={{
@@ -20,12 +23,13 @@ const ThreeCuboidBText = () => {
 
     <Middlecomp
       midheight="70%"
-      midcontent={<ThreeCuboidBTextMidContent />}
+      midcontent={<ThreeCuboidBTextMidContent instruction={setChangeInstruction}/>}
       toolvisible="hidden"
      
     />
 
-    <Footercomp footheight="20%" instruction={Instru.Instruction_4()} />
+    <Footercomp footheight="20%" instruction={changeInstruction} />
+    <ToastContainer/>
   </div>
   )
 }

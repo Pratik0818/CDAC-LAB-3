@@ -67,11 +67,11 @@ const DragAndDropMidContent = ({ instruction }) => {
 
 
             </div>
-            {count === 7 && <div className='text-center fw-bold' style={{ height: "15%", width: '100%' }}>
-                <label>Here cube is formed having length=(a+b), width=(a+b), height=(a+b)
+            {count === 7 && <div className='text-center' style={{ height: "15%", width: '100%' }}>
+                <label>Here, cube is formed having length=width=height=(a+b)
                 </label>
                 <br />
-                <label>So, Volume of cube = length * width * height = (a+b) * (a+b) * (a+b)</label>
+                <label>So, Volume of cube = (a+b) * (a+b) * (a+b)</label>
                 <br />
                 <label className=''> = (a+b)³ Which is LHS </label>
             </div>}

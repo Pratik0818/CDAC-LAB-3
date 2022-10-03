@@ -35,10 +35,11 @@ const ObservationMidContent = () => {
                         </Suspense>
                     </Canvas></div> */}
             </div>
-            <div className='text-center fw-bold' style={{ height: "10%", width: '100%' }}>
-                <label>Obsevation : Here we combine the RHS part it will form a cube whose volume = (a+b)³ which is LHS </label>
+            <div className='text-center ' style={{ height: "10%", width: '100%' }}>
+            <label className='fw-bold'>What do you observe?</label><br/>
+                <label>Here, we can observe from figure that, when we combine the RHS part it will form a cube of side (a+b) and volume = (a+b)³ which is LHS </label>
                 <br/>
-                <label>Therfore, LHS=RHS</label>
+                <label>Therfore, LHS=RHS hence verified.</label>
             </div>
             <BackNextBar
                 setForward={onNext}

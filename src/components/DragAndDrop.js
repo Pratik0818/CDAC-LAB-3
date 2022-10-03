@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const DragAndDrop = () => {
 
-  const [changeinstruction, setChangeInstruction] = useState(Instru.Instruction_3());
+  const [changeinstruction, setChangeInstruction] = useState(Instru.Instruction_6());
   return (
     <div
       style={{

@@ -117,7 +117,7 @@ const TwoCubesMidContent = ({instruction}) => {
                 </Canvas>
             </div>
             <div className='d-flex fw-bold' style={{ height: "10%" }}>
-                <div className='my-1 col-6 text-center'><label style={{ fontSize: "1.2vw" }}>
+                <div className='my-1 col-6 text-center'><label >
                     Volume of cube with side a = {firstInputValue} i.e a³ =
                     <input
                          disabled={disabled ? false : true}
@@ -127,13 +127,13 @@ const TwoCubesMidContent = ({instruction}) => {
                         style={{ width: "20%" }}
                         required
                     ></input> </label></div>
-                <div className='my-1 col-6 text-center'> <label style={{ fontSize: "1.2vw" }}>
+                <div className='my-1 col-6 text-center'> <label>
                     Volume of cube with side b = {secondInputValue} i.e b³ =
                     <input
                         disabled={disabled1  ? false : true}
                         id="first"
                         type="number"
-                        onBlur={inputValuesTwo}
+                        onChange={inputValuesTwo}
                         style={{ width: "20%" }}
                         required
                     ></input> </label></div>

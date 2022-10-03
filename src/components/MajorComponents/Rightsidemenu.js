@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import theory from "../../Img/theory.png";
 import mcq from "../../Img/mcq.png";
 import help from "../../Img/help.png";
-import settings from "../../Img/settings.png";
+//import settings from "../../Img/settings.png";
 
 import InfoPopup from "./InfoPopup";
 import QuizPopupContent from "../QuizPopupContent";

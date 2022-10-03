@@ -54,8 +54,8 @@ const FbxDemoMidContent = () => {
     renderer = new THREE.WebGLRenderer()
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setSize(1100, 420);
-    renderer.setClearColor(0xffffff, 0);
-    // renderer.setClearColor(0xeeeeee, 1);
+    //renderer.setClearColor(0xffffff, 0);
+     renderer.setClearColor(0xeeeeee, 1);
     container.appendChild(renderer.domElement);
 
     controls = new OrbitControls(camera, renderer.domElement)

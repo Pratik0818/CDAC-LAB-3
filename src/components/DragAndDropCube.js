@@ -248,9 +248,12 @@ const DragAndDropCube = (props) => {
       {/* cuboid L geometry */}
       {count >= 2 && <group onClick={() => {
         if ((cubeL[0] !== -2.0) && (cubeL[1] !== 1.5)) {
-          count = count + 1;
-          setCount(count);
-          setCubeL([-2.0, 1.5, 0]);
+          if (count === 2) {
+            count = count + 1;
+            setCount(count);
+            setCubeL([-2.0, 1.5, 0]);
+          }
+
         }
 
       }}>
@@ -322,9 +325,12 @@ const DragAndDropCube = (props) => {
       {/* cuboid M geometry */}
       {count >= 0 && <group onClick={() => {
         if (cubeM[1] !== 3.5) {
-          count = count + 1;
-          setCount(count);
-          setCubeM([0, 3.5, 0]);
+          if (count === 0) {
+            count = count + 1;
+            setCount(count);
+            setCubeM([0, 3.5, 0]);
+          }
+
 
         }
 
@@ -395,9 +401,12 @@ const DragAndDropCube = (props) => {
       {count >= 1 && <group onClick={() => {
         console.log("first count ", count);
         if ((cubeN[1] !== 1.5) && (cubeN[2] !== -2.0)) {
-          count = count + 1;
-          setCount(count);
-          setCubeN([0, 1.5, -2.0]);
+          if (count === 1) {
+            count = count + 1;
+            setCount(count);
+            setCubeN([0, 1.5, -2.0])
+          }
+          ;
 
         }
 
@@ -483,11 +492,14 @@ const DragAndDropCube = (props) => {
       {/* cuboid P geometry */}
       {count >= 4 && <group onClick={() => {
         if ((cubeP[0] !== -2.0) && (cubeP[1] !== 3.5)) {
-          count = count + 1;
-          setCount(count);
-          setCubeP([-2.0, 3.5, 0]);
+          if (count === 4) {
+            count = count + 1;
+            setCount(count);
+            setCubeP([-2.0, 3.5, 0]);
+          }
+
         }
-        
+
       }}>
         <mesh
           castShadow
@@ -557,11 +569,14 @@ const DragAndDropCube = (props) => {
       {/* Cuboid Q geometry */}
       {count >= 3 && <group onClick={() => {
         if ((cubeQ[1] !== 3.5) && (cubeQ[2] !== -2.0)) {
-          count = count + 1;
-          setCount(count);
-          setCubeQ([0, 3.5, -2.0]);
+          if (count === 3) {
+            count = count + 1;
+            setCount(count);
+            setCubeQ([0, 3.5, -2.0]);
+          }
+
         }
-        
+
       }}>
         <mesh
           castShadow
@@ -631,11 +646,14 @@ const DragAndDropCube = (props) => {
       {/* Cuboid R geometry */}
       {count >= 5 && <group onClick={() => {
         if ((cubeR[0] !== -2.0) && (cubeR[1] !== 1.5) && (cubeR[2] !== -2.0)) {
-          count = count + 1;
-          setCount(count); 
-          setCubeR([-2.0, 1.5, -2.0]);
+          if (count === 5) {
+            count = count + 1;
+            setCount(count);
+            setCubeR([-2.0, 1.5, -2.0]);
+          }
+
         }
-       
+
       }}>
         <mesh
           castShadow
@@ -703,11 +721,14 @@ const DragAndDropCube = (props) => {
       {/* Cube B geometry*/}
       {count >= 6 && <group onClick={() => {
         if ((cubeB[0] !== -2.0) && (cubeB[1] !== 3.5) && (cubeB[2] !== -2.0)) {
-          count = count + 1;
-          setCount(count); 
-          setCubeB([-2.0, 3.5, - 2.0]);
+          if (count === 6) {
+            count = count + 1;
+            setCount(count);
+            setCubeB([-2.0, 3.5, - 2.0]);
+          }
+
         }
-       
+
       }}>
         <mesh
           castShadow

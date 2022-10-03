@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import backgroundImg from "../Img/backg.jpg";
 import * as Instru from "./MajorComponents/Instruction"
 import Footercomp from './MajorComponents/Footercomp'
@@ -10,6 +10,8 @@ import { useEffect } from 'react';
 
 
 const ThreeCuboidsA = () => {
+
+  let [changeInstruction, setChangeInstruction] = useState(Instru.Instruction_2());
 
   useEffect(() => {
     toast.success("Three Cuboids of dimensions a*a*b is drawn successfully ", {
@@ -30,12 +32,12 @@ const ThreeCuboidsA = () => {
 
       <Middlecomp
         midheight="75%"
-        midcontent={<ThreeCuboidsAMidContent />}
+        midcontent={<ThreeCuboidsAMidContent instruction={setChangeInstruction}/>}
         toolvisible="hidden"
        
       />
 
-      <Footercomp footheight="15%" instruction={Instru.Instruction_2()} />
+      <Footercomp footheight="15%" instruction={changeInstruction} />
       <ToastContainer/>
     </div>
   )
