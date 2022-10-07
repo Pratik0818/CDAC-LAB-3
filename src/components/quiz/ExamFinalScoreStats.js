@@ -141,7 +141,7 @@ class ExamFinalScoreStats extends React.Component {
 
             <table class="table" style={{width:"80%", marginLeft:"auto", marginRight:"auto", textAlign:"left"}}>
             <thead class="table-dark" style={{textAlign:"center"}}>
-                <tr> <th colspan="3" scope="col"># Total no of Question : {noOfQuestion}</th> </tr>
+                <tr> <th colspan="3" scope="col"># Total no of questions : {noOfQuestion}</th> </tr>
             </thead>
             <tbody>
                 <tr class="table-info">
@@ -154,7 +154,7 @@ class ExamFinalScoreStats extends React.Component {
                 </tr>
                 <tr class="table-warning">
                     <th scope="row">3</th>
-                    <td>Partial Apptempts</td> <td>{noOfPartialAttempts}</td>
+                    <td>Partial Attempts</td> <td>{noOfPartialAttempts}</td>
                 </tr>                
                 <tr class="table-light">
                     <th scope="row">4</th>
@@ -181,7 +181,7 @@ class ExamFinalScoreStats extends React.Component {
               onClick={() => {
                                 this.handleClose(); 
                         }}    >   
-              Continue
+              ok
             </Button>
           </Modal.Footer>
         </Modal>

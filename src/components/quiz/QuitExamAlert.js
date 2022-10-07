@@ -41,7 +41,7 @@ class QuitExamAlert extends React.Component {
           centered
         >
           <Modal.Body>
-            <h6>Are you sure, You want to Quit ??</h6>
+            <h6>Are you sure you want to quit?</h6>
           </Modal.Body>
 
           <Modal.Footer style={{ justifyContent: "space-around" }}>

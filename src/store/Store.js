@@ -9,7 +9,6 @@ const firstSlice = createSlice({
     reducers:{
         setFirstInputValue1: (state,action)=>
         {
-            
            state.firstInputValue1 =action.payload;
            console.log("1st  value : ",state.firstInputValue1);
         },

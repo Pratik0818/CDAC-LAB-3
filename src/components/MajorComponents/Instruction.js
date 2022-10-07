@@ -11,28 +11,27 @@ const expression = () => {
 
 const Instruction_1 = () => {
   return <ul>
-    Enter value into their respective boxes and click on <b>DRAW CUBE</b> button.
+    Enter value into their respective boxes and click on "DRAW CUBE" button.
   </ul>;
 };
 
 const Instruction_2 = () => {
   return (
     <ul>
-      Enter value into their respective boxes.
+      Enter values into their respective boxes.
     </ul>
   );
 };
 
 const Instruction_3 = () => {
-  return <ul><li>Drag the Cuboids (M,N,L,Q,P,R) and Cube B</li>
-    <li>Click SHOW DEMO Button to see demo.</li></ul>;
+  return <ul>See the demo and click on "BACK" button.</ul>;
 };
 
 const Instruction_4 = () => {
   return (
     <ul>
       <ul>
-        Click on <b>Next</b> button.
+        Click on the "NEXT" button.
       </ul>
     </ul>
   );
@@ -50,7 +49,7 @@ const Instruction_5 = () => {
 const Instruction_6 = () => {
   return (
     <ul>
-      Click on Cuboid M.
+      Click on the Cuboid M(Green) and also watch demo for clicking "SEE DEMO" button. 
     </ul>
   );
 };
@@ -58,7 +57,7 @@ const Instruction_6 = () => {
 const Instruction_7 = () => {
   return (
     <ul>
-      Click on Cuboid N.
+      Rotate the workbench and click on the Cuboid N(Green).
     </ul>
   );
 };
@@ -66,7 +65,7 @@ const Instruction_7 = () => {
 const Instruction_8 = () => {
   return (
     <ul>
-      Click on Cuboid L.
+      Rotate the workbench and click on the Cuboid L(Green).
     </ul>
   );
 };
@@ -74,7 +73,7 @@ const Instruction_8 = () => {
 const Instruction_9 = () => {
   return (
     <ul>
-      Click on Cuboid Q.
+      Rotate the workbench and click on Cuboid Q(Red).
     </ul>
   );
 };
@@ -82,14 +81,14 @@ const Instruction_9 = () => {
 const Instruction_10 = () => {
   return (
     <ul>
-      Click on Cuboid P.
+      Rotate the workbench and click on Cuboid P(Red).
     </ul>
   );
 };
 const Instruction_11 = () => {
   return (
     <ul>
-      Click on Cuboid R.
+      Rotate the workbench and click on Cuboid R(Red).
     </ul>
   );
 };
@@ -97,7 +96,7 @@ const Instruction_11 = () => {
 const Instruction_12 = () => {
   return (
     <ul>
-      Click on Cuboid B.
+      Rotate the workbench and click on Cuboid B(Blue).
     </ul>
   );
 };

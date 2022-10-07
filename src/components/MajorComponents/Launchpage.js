@@ -42,7 +42,7 @@ const Launchpage = () => {
             className="d-flex justify-content-center align-items-center fw-normal"
             style={{ height: "10vh", fontSize: "1.8vw" }}
           >
-           To verify the algebraic identity :(a + b)³ = a³ + b³ + 3a²b + 3ab² 
+            To verify the algebraic identity: (a + b)³ = a³ + b³ + 3a²b + 3ab².
 
           </div>
         </div>
@@ -57,10 +57,9 @@ const Launchpage = () => {
             className="fw-normal d-flex justify-content-center align-items-center flex-column"
             style={{ height: "22vh", fontSize: "1.5vw" }}
           >
-            <div className="">
-            1.Student will be able to calculate the cube of a number by expressing it as the sum of two convenient numbers.  
-              2. Student will be able to simplify and factorise of  algebraic expressions.<br/> 
-              3. Student can learn the concept of verifying the identity geometrically by adding volume of cubes and cuboids.
+            <div className="text-center">
+              1. Student will be able to verify the algebric identity geometrically by adding volume of cubes and cuboids.<br/>
+              2. Student will be able to calculate the cube of a number by expressing it as the sum of two convenient numbers.
             </div>
           </div>
         </div>

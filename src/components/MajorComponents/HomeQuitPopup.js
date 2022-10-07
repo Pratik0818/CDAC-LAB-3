@@ -18,7 +18,7 @@ const HomeQuitPopup = ({ openDialog, onAgree, closeDialog }) => {
     <>
       <Dialog open={openDialog} TransitionComponent={Transition}>
         <DialogContent>
-          <Typography>Are you sure you want to quit ?</Typography>
+          <Typography>Are you sure you want to quit?</Typography>
         </DialogContent>
         <DialogActions style={{ justifyContent: "space-around" }}>
           <Button

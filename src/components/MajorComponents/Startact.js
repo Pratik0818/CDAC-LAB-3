@@ -30,7 +30,7 @@ const Startact = () => {
         className=" d-flex justify-content-center align-items-center text-center"
         style={{ height: "50%", fontSize: "1.5vw" }}
       >
-        <span className="fw-bold">Objective</span>:  To verify the algebraic identity :(a + b)³ = a³ + b³ + 3a²b + 3ab²
+        <span className="fw-bold">Objective</span>:  To verify the algebraic identity :(a + b)³ = a³ + b³ + 3a²b + 3ab².
       </div>
       <div
         className=" d-flex justify-content-center"

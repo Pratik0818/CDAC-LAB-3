@@ -25,7 +25,7 @@ const FbxDemo = () => {
       
       />
 
-      <Footercomp footheight="15%" instruction={Instru.default()} />
+      <Footercomp footheight="15%" instruction={Instru.Instruction_3()} />
     </div>
   )
 }

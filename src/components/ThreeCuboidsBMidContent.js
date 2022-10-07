@@ -42,18 +42,21 @@ const ThreeCuboidsBMidContent = ({instruction}) => {
     navigate("/letusverify/draganddrop")
   }
 
+ // regex
+ const exp = /^3$/;
+ const exp1 = /^16$/;
 
   // first input
   const inputValues = (event) => {
-    let value = parseInt(event.target.value);
-    if ((value === 3) && (cubeA === 3)) {
+    let value = (event.target.value);
+    if ((exp.test(value)) && (cubeA === 3)) {
       setDisabled(!disabled);
       toast.success("Good! You were right", {
         position: "top-center",
         autoClose: 500,
       });
     }
-    else if ((value === 16) && (cubeA === 4)) {
+    else if ((exp1.test(value)) && (cubeA === 4)) {
       setDisabled(!disabled);
       toast.success("Good! You were right", {
         position: "top-center",
@@ -69,17 +72,21 @@ const ThreeCuboidsBMidContent = ({instruction}) => {
     }
   }
 
+  // regex
+  const exp2 = /^9$/;
+  const exp3 = /^48$/;
+
   //second input
   const inputValuesTwo = (event) => {
     let value = parseInt(event.target.value);
-    if ((value === 9) && (cubeB === 1)) {
+    if ((exp2.test(value)) && (cubeB === 1)) {
       setDisabled1(!disabled1);
       toast.success("Good! You were right", {
         position: "top-center",
         autoClose: 500,
       });
     }
-    else if ((value === 48) && (cubeB === 2)) {
+    else if ((exp3.test(value)) && (cubeB === 2)) {
       setDisabled1(!disabled1);
       toast.success("Good! You were right", {
         position: "top-center",

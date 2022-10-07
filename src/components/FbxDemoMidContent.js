@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
-import cube from "../model/cube.fbx";
+import cube from "../model/Cube-section-Transperant.fbx";
 import BackNextBar from './MajorComponents/BackNextBar';
 
 
@@ -48,14 +48,14 @@ const FbxDemoMidContent = () => {
       1000
     )
     //camera.position.set(-0.9,4.5, -1.5)
-    camera.position.set(-300, 100, -200);
+    camera.position.set(-300, 90, -200);
     //camera.position.set(1,4,1);
 
     renderer = new THREE.WebGLRenderer()
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setSize(1100, 420);
-    //renderer.setClearColor(0xffffff, 0);
-     renderer.setClearColor(0xeeeeee, 1);
+    renderer.setClearColor(0xffffff, 0);
+     //renderer.setClearColor(0xeeeeee, 1);
     container.appendChild(renderer.domElement);
 
     controls = new OrbitControls(camera, renderer.domElement)
@@ -109,7 +109,7 @@ const FbxDemoMidContent = () => {
     setTimeout(
       function () {
         modelReady = false;
-      }, 6000);
+      }, 8000);
 
     if (modelReady) mixer.update(clock.getDelta())
     render()

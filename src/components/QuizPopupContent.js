@@ -4,38 +4,45 @@ import { ListItemText } from "@mui/material";
 const QuizPopupContent = () => {
   return (
     <>
+     
       <ListItemText sx={{ display: "list-item" }}>
-        Ensure you read this guide from start to finish.
+      Read all instructions given below.
       </ListItemText>
-      <ListItemText sx={{ display: "list-item" }}>
+      {/* <ListItemText sx={{ display: "list-item" }}>
         {" "}
         The Quiz has a duration of 10 minutes and ends as soon as your time is
         elapses.
-      </ListItemText>
+      </ListItemText> */}
 
       <ListItemText sx={{ display: "list-item" }}>
-        After clicking on Button "Agree" quiz will start alongwith time
+      The quiz will start after clicking on the "OK" button,
+along with timer.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-   
-        Every question has 4 options.
+      To select an option as answer to given question click on it.
+      </ListItemText>
+     
+      <ListItemText sx={{ display: "list-item" }}>
+      You will get two attempts to select the correct option to the
+question.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-        Select the option which best answers the question by cliking (or
-        selecting) it.
+      You may skip the question, if you want.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-        If the question is fill in the blanks type then it is necessary to drag
-        and drop the correct option in the blank space .
+      The score and timing are displayed on the top of the screen
+throughout the quiz.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-        You will have 2 chances to select correct option.
+      You will get +1 for each correct answer. There is no
+negative marking.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-        If you dont know the answer you may skip the question and If the
-        question is attemted you cannot attemt it again. The score and timing is
-        displayed on top of the screen
+      The scorecard will be generated at the end of the quiz.
       </ListItemText>
+     
+    
+    
     </>
   );
 };

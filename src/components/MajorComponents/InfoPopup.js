@@ -23,7 +23,7 @@ const InfoPopup = ({ openDialog, onAgree, closeDialog, content,popuptitle }) => 
         </DialogContent>
         <DialogActions>
           <Button variant="contained" color="primary" size="small" onClick={onAgree}>
-            Agree
+            Ok
           </Button>
           <Button variant="contained" color="secondary" size="small" onClick={closeDialog}>
             Cancel
