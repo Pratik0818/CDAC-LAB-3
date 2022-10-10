@@ -59,7 +59,7 @@ const Launchpage = () => {
           >
             <div className="text-center">
               1. Student will be able to verify the algebric identity geometrically by adding volume of cubes and cuboids.<br/>
-              2. Student will be able to calculate the cube of a number by expressing it as the sum of two convenient numbers.
+              2. Student will be able to calculate the cube of a number by expressing it as the sum of any two convenient numbers.
             </div>
           </div>
         </div>

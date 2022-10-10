@@ -25,6 +25,8 @@ const ThreeCuboidsAMidContent = ({ instruction }) => {
     let cubeB = parseInt(localStorage.getItem("val2"));
     const [firstInputValue, setFirstInputValue] = useState(0);
     const [secondInputValue, setSecondInputValue] = useState(0);
+    
+
     useEffect(() => {
         if (!disabled && !disabled1) {
             instruction(Instru.Instruction_4());
@@ -37,8 +39,7 @@ const ThreeCuboidsAMidContent = ({ instruction }) => {
         //     setFirstInputValue(3);
         //     setSecondInputValue(1);
         // }
-        if(cubeA === 3 && cubeB === 1)
-        {
+        if (cubeA === 3 && cubeB === 1) {
             setFirstInputValue(3);
             setSecondInputValue(1);
         }
@@ -58,27 +59,45 @@ const ThreeCuboidsAMidContent = ({ instruction }) => {
     // first input
     const inputValues = (event) => {
         let value = (event.target.value);
-        if ((exp.test(value)) && (cubeA === 3)) {
-            setDisabled(!disabled);
-            toast.success("Good! You were right", {
-                position: "top-center",
-                autoClose: 500,
-            });
+        if (cubeA === 3) {
+            if ((exp.test(value))) {
+                setDisabled(!disabled);
+                toast.success("Good! You were right", {
+                    position: "top-center",
+                    autoClose: 500,
+                });
+            }
+            else {
+                toast.error("Wrong value please enter again", {
+                    position: "top-center",
+                    autoClose: 500,
+                });
+            }
         }
-        else if ((exp1.test(value)) && (cubeA === 4)) {
-            setDisabled(!disabled);
-            toast.success("Good! You were right", {
-                position: "top-center",
-                autoClose: 500,
-            });
+
+        if (cubeA === 4) {
+            if (value.length == 2) {
+                if ((exp1.test(value))) {
+                    setDisabled(!disabled);
+                    toast.success("Good! You were right", {
+                        position: "top-center",
+                        autoClose: 500,
+                    });
+
+                }
+                else {
+                    toast.error("Wrong value please enter again", {
+                        position: "top-center",
+                        autoClose: 500,
+                    });
+                }
+            }
 
         }
-        else {
-            toast.error("Wrong value please enter again", {
-                position: "top-center",
-                autoClose: 500,
-            });
-        }
+
+
+
+
     }
     // regex
     const exp2 = /^27$/;
@@ -128,9 +147,10 @@ const ThreeCuboidsAMidContent = ({ instruction }) => {
                     Volume of each cuboid a²b i.e {firstInputValue}² * {secondInputValue} =
                     <input
                         disabled={disabled ? false : true}
-                        type="number"
+                        type="email"
                         onChange={inputValues}
                         style={{ width: "20%" }}
+                        maxLength={cubeA == 4 ? 2 : 1}
                         required
                     ></input> </label></div>
                 <div className='my-1 col-6 text-center'> <label style={{ fontSize: "1.2vw" }}>

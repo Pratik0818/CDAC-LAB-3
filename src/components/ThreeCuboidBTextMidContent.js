@@ -176,7 +176,7 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
           </div>
         
           <div className="my-1">
-            Volume of three cuboids = a²b + a²b + a²b =
+            Volume of three cuboids = ab² + ab² + ab² =
             <input
              disabled={(!disabled && !disabled1 && disabled2) ? false : true}
               type="number"

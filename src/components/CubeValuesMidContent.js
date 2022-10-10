@@ -50,7 +50,7 @@ const CubeValuesMidContent = () => {
                                 className="fw-bold fst-italic text-primary "
                                 style={{ fontSize: "1.3vw" }}
                             >
-                                Enter Values
+                                Enter Values cube A = 3 and cube B = 1 or cube A = 4 and cube B = 2 
                             </div>
                         </div>
 
@@ -63,8 +63,7 @@ const CubeValuesMidContent = () => {
                                     className="col-6 fw-normal  d-flex justify-content-end align-items-center"
                                     style={{ height: "100%", fontSize: "1.2vw" }}
                                 >
-                                    Enter the value of side a for cube A (Range: 3 to
-                                    4)
+                                    Enter the value of side a for cube A 
                                 </label>
                                 <div
                                     className="col-6  d-flex align-items-center"
@@ -91,8 +90,7 @@ const CubeValuesMidContent = () => {
                                     className="col-6 fw-normal  d-flex justify-content-end align-items-center"
                                     style={{ height: "100%", fontSize: "1.2vw" }}
                                 >
-                                    Enter the value of side b for cube B (Range: 1 to
-                                    2)
+                                    Enter the value of side b for cube B 
                                 </label>
                                 <div
                                     className="col-6 d-flex align-items-center"
