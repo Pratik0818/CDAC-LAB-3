@@ -29,12 +29,14 @@ const VerificationMidContent = () => {
  
 
   const inputValues = (event) => {
+    if(event.target.value >=0)
     setValue(event.target.value);
-    console.log("This is valu: " + event.target.value);
+    //console.log("This is valu: " + event.target.value);
   };
   const inputValuestwo = (event) => {
+    if(event.target.value >=0)
     setSecondvalue(event.target.value);
-    console.log("This is valu2: " + event.target.value);
+    //console.log("This is valu2: " + event.target.value);
   };
 
 
@@ -58,6 +60,7 @@ const VerificationMidContent = () => {
                 </label>
                 <input
                   className="form-control ms-3 "
+                  min="0"
                   type="number"
                   value={value}
                   onChange={inputValues}
@@ -74,6 +77,7 @@ const VerificationMidContent = () => {
                 <input
                   className="form-control ms-3"
                   type="number"
+                  min="0"
                   value={secondvalue}
                   onChange={inputValuestwo}
                   style={{ width: "20%" }}

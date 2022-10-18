@@ -32,15 +32,15 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
     let value = e.target.value;
     if (value === "a") {
       setDisabled(!disabled);
-      toast.success("Good! You were right", {
+      toast.success("Good! You are right", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
     else{
-      toast.error("Wrong input", {
+      toast.error("Wrong input enter again", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
   };
@@ -48,15 +48,15 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
     let value = e.target.value;
     if (value === "b") {
       setDisabled1(!disabled1);
-      toast.success("Good! You were right", {
+      toast.success("Good! Keep it up", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
     else{
-      toast.error("Wrong input", {
+      toast.error("Wrong input enter again ", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
   };
@@ -64,15 +64,15 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
     let value = e.target.value;
     if (value == 3) {
       setDisabled2(!disabled2);
-      toast.success("Good! You were right", {
+      toast.success("Hurray", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
     else{
-      toast.error("Wrong input", {
+      toast.error("Sorry try again", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
   };
@@ -80,15 +80,15 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
     let value = e.target.value;
     if (value === "a") {
       setDisabled3(!disabled3);
-      toast.success("Good! You were right", {
+      toast.success("Good! You are right", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
     else{
-      toast.error("Wrong input", {
+      toast.error("Sorry try again", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
   };
@@ -96,15 +96,15 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
     let value = e.target.value;
     if (value === "b") {
       setDisabled4(!disabled4);
-      toast.success("Good! You were right", {
+      toast.success("Good! You are right", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
     else{
-      toast.error("Wrong input", {
+      toast.error("Wrong input enter again", {
         position: "top-center",
-        autoClose: 500,
+        autoClose: 900,
       });
     }
   };
@@ -154,9 +154,9 @@ const ThreeCuboidBTextMidContent = ({instruction}) => {
           </div>
 
         </div>
-        <div className="text-center" style={{ height: "40%" }}>
-          <div>Three cuboids of dimensions a*b*b is drawn successfully.</div>
-          <div>Cuboids in figure having width = a, length = b, height = b </div>
+        <div className="text-center" style={{ height: "40%",fontSize:"100%" }}>
+          <div>Here we have three cuboids of dimensions width = a, length = b, height = b</div>
+         
           <div>Volume of cuboid = length * width * height</div>
           <div>
             Volume of each cuboid = b * a * b =

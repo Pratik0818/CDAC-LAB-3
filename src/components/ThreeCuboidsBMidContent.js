@@ -51,15 +51,15 @@ const ThreeCuboidsBMidContent = ({ instruction }) => {
     if ((cubeA === 3)) {
       if ((exp.test(value))) {
         setDisabled(!disabled);
-        toast.success("Good! You were right", {
+        toast.success("Good! You are right", {
           position: "top-center",
-          autoClose: 500,
+          autoClose: 900,
         });
       }
       else {
         toast.error("Wrong value please enter again", {
           position: "top-center",
-          autoClose: 500,
+          autoClose: 900,
         });
       }
     }
@@ -67,16 +67,16 @@ const ThreeCuboidsBMidContent = ({ instruction }) => {
       if (value.length == 2) {
         if ((exp1.test(value))) {
           setDisabled(!disabled);
-          toast.success("Good! You were right", {
+          toast.success("Good! You are right", {
             position: "top-center",
-            autoClose: 500,
+            autoClose: 900,
           });
 
         }
         else {
           toast.error("Wrong value please enter again", {
             position: "top-center",
-            autoClose: 500,
+            autoClose: 900,
           });
         }
       }
@@ -94,14 +94,14 @@ const ThreeCuboidsBMidContent = ({ instruction }) => {
     if ((cubeB === 1)) {
       if ((exp2.test(value))) {
         setDisabled1(!disabled1);
-        toast.success("Good! You were right", {
+        toast.success("Good! You are right", {
           position: "top-center",
-          autoClose: 500,
+          autoClose: 900,
         });
       } else {
         toast.error("Wrong value please enter again", {
           position: "top-center",
-          autoClose: 500,
+          autoClose: 900,
         });
       }
     }
@@ -110,16 +110,16 @@ const ThreeCuboidsBMidContent = ({ instruction }) => {
        
         if ((exp3.test(value))) {
           setDisabled1(!disabled1);
-          toast.success("Good! You were right", {
+          toast.success("Good! You are right", {
             position: "top-center",
-            autoClose: 500,
+            autoClose: 900,
           });
 
         }
         else {
           toast.error("Wrong value please enter again", {
             position: "top-center",
-            autoClose: 500,
+            autoClose: 900,
           });
         }
 

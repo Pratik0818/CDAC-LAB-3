@@ -53,7 +53,7 @@ const Headcomp = ({ sidebarvisible }) => {
           }}
         >
           <div className=" fw-bold" style={{ fontSize: "1.4vw" }}>
-          Algebric Identity: <span className="fw-normal">(a + b)³ = a³ + b³ + 3a²b + 3ab²
+          Algebraic Identity: <span className="fw-normal">(a + b)³ = a³ + b³ + 3a²b + 3ab²
           </span> 
 
           </div>

@@ -29,7 +29,7 @@ const Launchpage = () => {
           className="d-flex justify-content-center align-items-center fw-bolder "
           style={{ height: "15vh", color: "#ac3843", fontSize: "2.5vw" }}
         >
-          Algebric Identity
+          Algebraic Identity
         </div>
         <div className="" style={{ height: "20vh" }}>
           <div
@@ -42,7 +42,7 @@ const Launchpage = () => {
             className="d-flex justify-content-center align-items-center fw-normal"
             style={{ height: "10vh", fontSize: "1.8vw" }}
           >
-            To verify the algebraic identity: (a + b)³ = a³ + b³ + 3a²b + 3ab².
+            To verify the algebraic identity: (a + b)³ = a³ + b³ + 3a²b + 3ab²
 
           </div>
         </div>
@@ -58,7 +58,7 @@ const Launchpage = () => {
             style={{ height: "22vh", fontSize: "1.5vw" }}
           >
             <div className="text-center">
-              1. Student will be able to verify the algebric identity geometrically by adding volume of cubes and cuboids.<br/>
+              1. Student will be able to verify the algebraic identity geometrically by adding volume of cubes and cuboids.<br/>
               2. Student will be able to calculate the cube of a number by expressing it as the sum of any two convenient numbers.
             </div>
           </div>

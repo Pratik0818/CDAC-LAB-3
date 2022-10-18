@@ -41,7 +41,7 @@ const AltheoryMidContent1 = () => {
           <li>
           The volume of the cube is the space contained in it. Suppose, if an object is in cubical shape and we need to immerse  any material in it, say water, then measure of water in litres to be kept in the object is calculated by its volume. 
           </li>
-          <li> The formula of the volume is given by : Volume of cube = (side)³</li>
+          <li> The formula of the volume is given by : Volume of cube = (side)³ (cubic unit)</li>
           <img
           className=""
           style={{

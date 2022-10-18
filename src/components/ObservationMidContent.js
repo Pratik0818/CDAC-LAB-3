@@ -37,9 +37,9 @@ const ObservationMidContent = () => {
             </div>
             <div className='text-center ' style={{ height: "10%", width: '100%' }}>
             <label className='fw-bold'>What do you observe?</label><br/>
-                <label>Hence, we can observe from figure that, a cube of side (a+b) is formed on LHS and adding all the cuboids and cubes on its volume is formed.</label>
+                <label>Hence, we can observe from figure that, by adding the volumes of all cubes and cuboids in the RHS, a new cube of side (a+b) is formed in the LHS.</label>
                 <br/>
-                <label>Therfore, LHS=RHS hence verified.</label>
+                <label>Therefore, LHS=RHS hence verified.</label>
             </div>
             <BackNextBar
                 setForward={onNext}

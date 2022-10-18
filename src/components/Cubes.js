@@ -41,6 +41,7 @@ const Cubes = () => {
           minPolarAngle={angleToRadians(70)}
           maxPolarAngle={angleToRadians(88)}
           enableRotate={!isMoving}
+          enableZoom={false}
         />
       </PerspectiveCamera>
 

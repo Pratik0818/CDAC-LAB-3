@@ -11,7 +11,7 @@ const expression = () => {
 
 const Instruction_1 = () => {
   return <ul>
-    Enter value into their respective boxes and click on "DRAW CUBE" button.
+    Enter value into their respective boxes and click on the "DRAW CUBE" button.
   </ul>;
 };
 
@@ -41,7 +41,7 @@ const Instruction_5 = () => {
   return (
     <ul>
       <li>Enter value of a and b and see the result.</li>
-      <li>Activity successfully completed click on RESTART Button.</li>
+      <li>Activity successfully completed click on the "RESTART" Button to perform this activity again.</li>
     </ul>
   );
 };
@@ -49,7 +49,7 @@ const Instruction_5 = () => {
 const Instruction_6 = () => {
   return (
     <ul>
-      Click on the Cuboid M(Green) and also watch demo for clicking "SEE DEMO" button. 
+      Click on the Cuboid M(Green). 
     </ul>
   );
 };
@@ -100,7 +100,13 @@ const Instruction_12 = () => {
     </ul>
   );
 };
-
+const Instruction_13 = () => {
+  return (
+    <ul>
+      Click on the Cuboid M(Green). 
+    </ul>
+  );
+};
 
 
 
@@ -119,4 +125,5 @@ export {
   Instruction_10,
   Instruction_11,
   Instruction_12,
+  Instruction_13,
 };

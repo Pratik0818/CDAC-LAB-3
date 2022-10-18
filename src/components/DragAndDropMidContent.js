@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Suspense } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Canvas } from 'react-three-fiber'
+import { setButtonOff } from '../store/Store'
 import DragAndDropCube from './DragAndDropCube'
 import BackNextBar from './MajorComponents/BackNextBar'
 import * as Instru from "./MajorComponents/Instruction"
@@ -11,13 +13,17 @@ const DragAndDropMidContent = ({ instruction }) => {
     const navigate = useNavigate();
     const [count, setCount] = useState(0);
     const [height, setHeight] = useState("90%");
+    let dispatch = useDispatch();
+    let { firstStore } = useSelector((globalState) => globalState);
 
-    useEffect(()=>{
-        if(count === 7)
-        {
+    useEffect(() => {
+        if (count === 7) {
             setHeight("75%")
         }
         
+
+        
+
     })
 
     const pull_data = (data) => {
@@ -46,18 +52,23 @@ const DragAndDropMidContent = ({ instruction }) => {
         if (count === 7) {
             instruction(Instru.Instruction_4());
         }
+        // if (firstStore.buttonOff==false) {
+        //     instruction(Instru.Instruction_13());
+        // }
     }
 
     const onNext = () => {
         navigate("/letusverify/observation");
     }
     const submitoperation = () => {
+
+        dispatch(setButtonOff(false));
         navigate("/letusverify/fbxdemo");
     }
 
     return (
         <div style={{ height: "100%" }}>
-            <div className='d-flex' style={{  height:height, width: '100%' }}>
+            <div className='d-flex' style={{ height: height, width: '100%' }}>
 
                 <Canvas shadows camera={{ position: [-3, 2, 5], fov: 40 }} >
                     <Suspense fallback={null}>
@@ -80,7 +91,7 @@ const DragAndDropMidContent = ({ instruction }) => {
                 clickSubmit={submitoperation}
                 backvisible="visible"
                 nextvisible={count === 7 ? "visible" : "hidden"}
-                submitvisible="visible"
+                submitvisible={(firstStore.buttonOff) ? "visible" : "hidden"}
                 buttonname="show demo"
             />
 

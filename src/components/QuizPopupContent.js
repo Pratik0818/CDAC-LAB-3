@@ -19,7 +19,7 @@ const QuizPopupContent = () => {
 along with timer.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-      To select an option as answer to given question click on it.
+      To select an option as an answer to the given question, click on it.
       </ListItemText>
      
       <ListItemText sx={{ display: "list-item" }}>

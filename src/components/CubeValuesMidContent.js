@@ -48,7 +48,7 @@ const CubeValuesMidContent = () => {
                         >
                             <div
                                 className="fw-bold fst-italic text-primary "
-                                style={{ fontSize: "1.3vw" }}
+                                style={{ fontSize: "1.2vw" }}
                             >
                                 Enter Values cube A = 3 and cube B = 1 or cube A = 4 and cube B = 2 
                             </div>

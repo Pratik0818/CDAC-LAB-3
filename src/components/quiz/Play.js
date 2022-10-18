@@ -887,7 +887,7 @@ class Play extends React.Component {
                   </button>
                   {currentQuestionIndex + 1 === numberOfQuestions ? (
                     <button id="exit-button" onClick={this.handleButtonClick}>
-                      Quit
+                      Scoreboard
                     </button>
                   ) : null}
                   {/*<button id="exit-button" onClick={this.handleButtonClick}>Quit</button>*/}

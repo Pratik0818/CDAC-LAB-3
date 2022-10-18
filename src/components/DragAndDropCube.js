@@ -164,6 +164,7 @@ const DragAndDropCube = (props) => {
           minPolarAngle={angleToRadians(50)}
           maxPolarAngle={angleToRadians(85)}
           enableRotate={!isMoving}
+          enableZoom={false}
 
         />
       </PerspectiveCamera>
