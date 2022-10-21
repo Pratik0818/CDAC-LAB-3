@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import theory from "../../Img/theory.png";
 import mcq from "../../Img/mcq.png";
 import help from "../../Img/help.png";
-//import settings from "../../Img/settings.png";
+import settings from "../../Img/settings.png";
 
 import InfoPopup from "./InfoPopup";
 import QuizPopupContent from "../QuizPopupContent";
@@ -62,12 +62,12 @@ const Rightsidemenu = () => {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              style={{ width: "125px", height: "300px", background: "#8bb7c5" }}
+              style={{ width: "125px", height: "200px", background: "#8bb7c5" }}
             >
               <div className="" style={{ height: "100%" }}>
                 <div
                   className=" d-flex justify-content-center align-items-center p-3"
-                  style={{ height: "33%" }}
+                  style={{ height: "50%" }}
                 >
                   <LightTooltip title="Theory" placement="left" arrow>
                     <Link to="/letusverify/sqtheory">
@@ -89,7 +89,7 @@ const Rightsidemenu = () => {
 
                 <div
                   className=" d-flex justify-content-center align-items-center p-3"
-                  style={{ height: "33%" }}
+                  style={{ height: "50%" }}
                 >
                   <LightTooltip title="Viva voce" placement="left" arrow>
                     <div onClick={openDialog}>
@@ -132,7 +132,7 @@ const Rightsidemenu = () => {
                   </LightTooltip>
                 </div> */}
 
-                <div
+                {/* <div
                   className=" d-flex justify-content-center align-items-center p-3"
                   style={{ height: "34%" }}
                 >
@@ -153,7 +153,8 @@ const Rightsidemenu = () => {
                       ></motion.img>
                     </Link>
                   </LightTooltip>
-                </div>
+                </div> */}
+
               </div>
             </Navbar.Offcanvas>
           </Container>

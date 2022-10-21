@@ -635,7 +635,7 @@ class Play extends React.Component {
                 <div className="lifeline-container fw-bold">
                   <p>
                     {" "}
-                    <span>Questions Attempted : </span>{" "}
+                    <span>Question: </span>{" "}
                     <span className="lifeline"></span>{" "} 
                     <span className="text-success">
                       {" "}
@@ -887,7 +887,7 @@ class Play extends React.Component {
                   </button>
                   {currentQuestionIndex + 1 === numberOfQuestions ? (
                     <button id="exit-button" onClick={this.handleButtonClick}>
-                      Scoreboard
+                      Score card
                     </button>
                   ) : null}
                   {/*<button id="exit-button" onClick={this.handleButtonClick}>Quit</button>*/}

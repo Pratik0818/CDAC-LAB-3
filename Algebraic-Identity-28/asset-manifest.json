@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "./static/css/main.65486abc.css",
+    "main.js": "./static/js/main.dafa8798.js",
+    "static/media/materialdesignicons-webfont.eot": "./static/media/materialdesignicons-webfont.de316c4d7c4935189323.eot",
+    "static/media/materialdesignicons-webfont.ttf?v=6.9.96": "./static/media/materialdesignicons-webfont.ac55aef662342c261b21.ttf",
+    "static/media/Cube-section-Transperant.fbx": "./static/media/Cube-section-Transperant.f63cdc08f5de634f9f51.fbx",
+    "static/media/backg.jpg": "./static/media/backg.3e346ab2cf4085ca7d66.jpg",
+    "static/media/materialdesignicons-webfont.woff?v=6.9.96": "./static/media/materialdesignicons-webfont.059ea00c378aeafc39fc.woff",
+    "static/media/materialdesignicons-webfont.woff2?v=6.9.96": "./static/media/materialdesignicons-webfont.d5cba82059f88bfa469e.woff2",
+    "static/media/errorimg.jpg": "./static/media/errorimg.e955eb06363e293ccebe.jpg",
+    "static/media/trophy.png": "./static/media/trophy.ef5e1bce34f5a4f4316c.png",
+    "static/media/theory.png": "./static/media/theory.bd9ae2c22f7cd2bfdd63.png",
+    "static/media/image.png": "./static/media/image.ed95799b010e9fbe9572.png",
+    "static/media/settings.png": "./static/media/settings.ed30cfc13d934c614b92.png",
+    "static/media/tools1.png": "./static/media/tools1.7abb936003487f39c150.png",
+    "static/media/correct-answer.mp3": "./static/media/correct-answer.e1cf8406691899855c2d.mp3",
+    "static/media/letusverify.png": "./static/media/letusverify.7b844e3b0372df20db85.png",
+    "static/media/wrong-answer.mp3": "./static/media/wrong-answer.e08b616b298a5da45785.mp3",
+    "static/media/mcq.png": "./static/media/mcq.c75bc9d2eaff1a7bc0db.png",
+    "static/media/help.png": "./static/media/help.cf8b88042238c2ca75dc.png",
+    "static/media/button-sound.mp3": "./static/media/button-sound.8277ab8cffed4aaa3b2e.mp3",
+    "static/media/back.png": "./static/media/back.24f3b348b9d694daad23.png",
+    "static/media/next.png": "./static/media/next.118cb02c29fe66101727.png",
+    "index.html": "./index.html",
+    "main.65486abc.css.map": "./static/css/main.65486abc.css.map",
+    "main.dafa8798.js.map": "./static/js/main.dafa8798.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65486abc.css",
+    "static/js/main.dafa8798.js"
+  ]
+}
