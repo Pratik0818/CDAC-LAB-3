@@ -40,8 +40,8 @@ const Instruction_4 = () => {
 const Instruction_5 = () => {
   return (
     <ul>
-      <li>Enter value of a and b and see the result.</li>
-      <li>Activity successfully completed click on the "RESTART" Button to perform this activity again.</li>
+      <li>Enter value of "a" and "b" and see the result.</li>
+      <li>Click on the "RESTART" button to perform this activity again.</li>
     </ul>
   );
 };

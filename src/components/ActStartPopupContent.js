@@ -20,7 +20,7 @@ const ActStartPopupContent = () => {
        After this we have our verification part of the activity where student will get to set the value of side of cubes and cuboids which is depicted as 'a' unit and 'b' unit.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
-      As the student chooses or changes the values of 'a' and 'b' the student will get to verify L.H.S as well as R.H.S part of the algebric equation.
+      As the student chooses or changes the values of 'a' and 'b' the student will get to verify L.H.S as well as R.H.S part of the algebraic equation.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
      Now let us start our activity with R.H.S first.
